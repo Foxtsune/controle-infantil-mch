@@ -1,24 +1,3 @@
-// TOOLTIPS
-$(function () {
-	$('[data-toggle="tooltip"]').tooltip()
-});
-
-/*SIDE-NAV-BAR
-https://startbootstrap.com/template-overviews/simple-sidebar/*/
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
-
-/*CHANGE MENU TOGGLER
-http://www.bootstraptoggle.com/------------------------*/
-$(function() {
-	$('#toggler-button').bootstrapToggle({
-	  on: 'Menu',
-	  off: 'Menu'
-	});
-});
-
 /*DATATABLE*/
 $(function () {
     $('#table_id').DataTable({
@@ -69,11 +48,26 @@ $(function () {
     });
 });
 
-/* fsbanner */
 
-// the div must have the fsbanner class for styling, 
-// but you can use any selector that would match the div here.
-$('.fsbanner').fsBanner();
-
-
+/*MODAL TRIGGER*/
 $('#exampleModal').modal('show');
+
+/*PHONE MASK*/
+function setupPhoneMaskOnField(selector){
+  var inputElement = $(selector)
+
+  setCorrectPhoneMask(inputElement);
+  inputElement.on('input, keyup', function(){
+    setCorrectPhoneMask(inputElement);
+  });
+}
+
+function setCorrectPhoneMask(element){
+  if (element.inputmask('unmaskedvalue').length > 10 ){
+    element.inputmask('remove');
+    element.inputmask('(99) 9999[9]-9999')
+  } else {
+    element.inputmask('remove');
+    element.inputmask({mask: '(99) 9999-9999[9]', greedy: false})
+  }
+}

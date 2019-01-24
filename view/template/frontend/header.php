@@ -26,7 +26,7 @@
       <div class="container">
         <a class="navbar-brand mr-sm-5" href="index.php">
           <img class="img-fluid" src="../assets/img/brasão.png" alt="Brasão Machado">
-          <span class="text-uppercase col-sm-6">Monitoramento de Vagas da Educação Infantil</span>
+          <span class="text-uppercase col-sm-12">Monitoramento de Vagas da Educação Infantil</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

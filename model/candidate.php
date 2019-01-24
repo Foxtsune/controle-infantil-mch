@@ -11,3 +11,10 @@ function getAllCandidates(){
 	$candidates = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $candidates;
 }
+
+function insertCandidate($name,$birth,$inscription,$mother,$father){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("INSERT INTO `candidate` (nome,foto,email) VALUES(:name, :photo, :email)");
+	$statement->execute(array(":name"=>$name,":photo"=>$photo,":email"=>$email));
+	return $statement->rowCount();
+}
