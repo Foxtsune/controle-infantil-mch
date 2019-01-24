@@ -46,9 +46,10 @@ $(function () {
 		        "sSortDescending": ": Ordenar colunas de forma descendente"
 		    }
 		},/*SCROLLING*/
+		"scrollY":        "400px",
 		"scrollX":        "1000px",
         "scrollCollapse": true,
-        "paging":         false,
+        "paging":         true,
         "columnDefs": [
             { "width": "230px", targets: 0 },//nome
             { "width": "auto", targets: 1 },//dtCad
