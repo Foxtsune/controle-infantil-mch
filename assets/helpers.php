@@ -39,6 +39,12 @@ function test_input($data) {
   return $data;
 }
 
+function numberTransform($string) {
+   $string = str_replace('-', '', $string); // Replaces all hyphens.
+
+   return preg_replace('/[^0-9\-]/', '', $string); // Number transform.
+}
+
 
 /*Return a formated date (Pt-br)*/
 function formatDate($string){

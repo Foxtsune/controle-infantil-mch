@@ -52,9 +52,9 @@ require_once abspath().'/view/template/frontend/header.php';
 	                    <div class="col-md-4 col-sm-12">
 	                    	<div class="input-group mb-md-3 mb-sm-1">
 							  <div class="input-group-prepend">
-							    <span class="input-group-text" id="basic-addon-birth">Data do Cadastro</span>
+							    <span class="input-group-text" id="basic-addon-inscription">Data do Cadastro</span>
 							  </div>
-							  <input type="date" required class="form-control" id="birth" name="birth" aria-describedby="basic-addon-birth">
+							  <input type="date" required class="form-control" id="inscription" name="inscription" aria-describedby="basic-addon-inscription">
 							</div>
 	                    </div>
 					</div>
@@ -63,9 +63,9 @@ require_once abspath().'/view/template/frontend/header.php';
 	                    <div class="col-md-5 col-sm-12">
 	                    	<div class="input-group mb-md-3 mb-sm-1">
 							  <div class="input-group-prepend">
-							    <span class="input-group-text" id="basic-addon-neigborhood">Bairro</span>
+							    <span class="input-group-text" id="basic-addon-neighborhood">Bairro</span>
 							  </div>
-							  <input type="text" required class="form-control" id="neigborhood" name="neigborhood" aria-describedby="basic-addon-neigborhood">
+							  <input type="text" required class="form-control" id="neighborhood" name="neighborhood" aria-describedby="basic-addon-neighborhood">
 							</div>
 	                    </div>
 	                    <div class="col-md-5 col-sm-12">
@@ -73,7 +73,7 @@ require_once abspath().'/view/template/frontend/header.php';
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-street">Logradouro</span>
 							  </div>
-							  <input type="text" required class="form-control" id="rua" name="rua" aria-describedby="basic-addon-street">
+							  <input type="text" required class="form-control" id="street" name="street" aria-describedby="basic-addon-street">
 							</div>                      
 	                    </div>
 	                    <div class="col-md-2 col-sm-12">

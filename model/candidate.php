@@ -12,9 +12,13 @@ function getAllCandidates(){
 	return $candidates;
 }
 
-function insertCandidate($name,$birth,$inscription,$mother,$father){
+function insertCandidate($name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2){
 	$conn = dbConnetion();
-	$statement = $conn->prepare("INSERT INTO `candidate` (nome,foto,email) VALUES(:name, :photo, :email)");
-	$statement->execute(array(":name"=>$name,":photo"=>$photo,":email"=>$email));
+	$statement = $conn->prepare("INSERT INTO `candidate` (name,birth,inscription,mother,father,street,number,neighborhood,telephone,telephone2) 
+		VALUES(:name,:birth,:inscription,:mother,:father,:street,:number,:neighborhood,:tel,:tel2)");
+	$statement->execute(array(":name" => $name, "birth" => $birth, "inscription" => $inscription,
+	 						  "mother" => $mother, "father" => $father, "street" => $street,
+	 						  "number" => $number, "neighborhood" => $neighborhood, 
+	 						  "tel" => $tel, "tel2" => $tel2));
 	return $statement->rowCount();
 }
