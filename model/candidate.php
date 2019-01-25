@@ -31,3 +31,16 @@ function insertCandidate($name,$birth,$inscription,$mother,$father,$street,$numb
 	 						  "tel" => $tel, "tel2" => $tel2));
 	return $statement->rowCount();
 }
+
+function updateCandidate($id,$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2,$contact,$destination,$situation){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("UPDATE `candidate` SET name=:name, birth=:birth, 
+								inscription=:inscription, mother=:mother, father=:father, street=:street, 
+								number=:number,neighborhood=:neighborhood, telephone=:tel, telephone2=:tel2,
+								contact=:contact, destination=:destination, situation=:situation  WHERE id=:id");
+	$statement->execute(array(":name"=>$name,":birth"=>$birth,":inscription"=>$inscription,
+								":mother"=>$mother,":father"=>$father,":street"=>$street,":number"=>$number,
+								":neighborhood"=>$neighborhood,":tel"=>$tel,":tel2"=>$tel2,":contact"=>$contact,
+								":destination"=>$destination,":situation"=>$situation,":id"=>$id));
+	return $statement->rowCount();
+}

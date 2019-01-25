@@ -12,7 +12,7 @@ $rows = loadAllCandidates();
 <!-- Page Content -->
     <div id="page-content-wrapper" style="width: 100%">
         <section class="container-fluid">
-            <table id="table_id" class="display table">
+            <table id="table_id" class="display table table-bordered">
                 <thead>
                     <!-- 15306 default column size javascrip file  -->
                     <tr id="theader">
@@ -30,25 +30,28 @@ $rows = loadAllCandidates();
                         <th scope="col" class="text-center">Contato</th>
                         <th scope="col" class="text-center">Unidade de Zoneamento</th>
                         <th scope="col" class="text-center">Situação</th>
+                        <th scope="col" class="text-center">Apagar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($rows as $row => $column): ?>
                     <tr>
-                        <td scope="row"><a href="edit_candidate.php?id=<?php echo $column->id ?>"><img src="../assets/img/edit.png" width="30" height="30"></a></td>
-                        <td scope="row"><?php echo $column->name ?></td>
-                        <td scope="row"><?php echo $column->inscription ?></td>
-                        <td scope="row"><?php echo $column->birth ?></td>
-                        <td scope="row"><?php echo $column->father ?></td>
-                        <td scope="row"><?php echo $column->mother ?></td>
-                        <td scope="row"><?php echo $column->street ?></td>
-                        <td scope="row"><?php echo $column->number ?></td>
-                        <td scope="row"><?php echo $column->neighborhood ?></td>
-                        <td scope="row"><?php echo $column->telephone ?></td>
-                        <td scope="row"><?php echo $column->telephone2 ?></td>
-                        <td scope="row"><?php echo $column->contact ?></td>
-                        <td scope="row"><?php echo $column->destination ?></td>
-                        <td scope="row"><?php echo $column->situation ?></td>
+                        <td scope="row" class="text-center"><a href="edit_candidate.php?id=<?php echo $column->id ?>"><img src="../assets/img/edit.png" width="30" height="30"></a></td>
+                        <td scope="row" class="text-center"><?php echo $column->name ?></td>
+                        <td scope="row" class="text-center"><?php echo stringToDate($column->inscription) ?></td>
+                        <td scope="row" class="text-center"><?php echo stringToDate($column->birth) ?></td>
+                        <td scope="row" class="text-center"><?php echo $column->father ?></td>
+                        <td scope="row" class="text-center"><?php echo $column->mother ?></td>
+                        <td scope="row" class="text-center"><?php echo $column->street ?></td>
+                        <td scope="row" class="text-center"><?php echo $column->number ?></td>
+                        <td scope="row" class="text-center"><?php echo $column->neighborhood ?></td>
+                        <td scope="row" class="text-center"><?php echo telephoneFormater($column->telephone)?></td>
+                        <td scope="row" class="text-center"><?php echo telephoneFormater($column->telephone2) ?></td>
+                        <td scope="row" class="text-center"><?php echo $column->contact ?></td>
+                        <td scope="row" class="text-center"><?php echo $column->destination ?></td>
+                        <td scope="row" class="text-center"><?php echo $column->situation ?></td>
+                        <td scope="row" class="text-center"><a href="edit_candidate.php?id=<?php echo $column->id ?>"><img src="../assets/img/delete.png" width="30" height="30"></a></td>
+
                     </tr>
                     <?php endforeach ?>
                 </tbody>

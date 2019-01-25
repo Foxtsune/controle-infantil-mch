@@ -7,7 +7,7 @@ function abspath(){
 }
 
 function myURL(){
-	return 'http://localhost/meusite/';
+	return 'http://localhost/Controle-Infantil/';
 }
 
 
@@ -18,7 +18,7 @@ function validateSession(){
 		unset($_SESSION['username']);
 		session_destroy();
 		$location = abspath().'view/frontend/login.php';
-		header('location: '. myURL(). 'view/frontend/login.php');
+		header('location: '. myURL().'view/frontend/login.php');
 		exit;
 	}
 }
@@ -39,12 +39,33 @@ function test_input($data) {
   return $data;
 }
 
+/*Transform a number to DB insertion*/
 function numberTransform($string) {
    $string = str_replace('-', '', $string); // Replaces all hyphens.
 
    return preg_replace('/[^0-9\-]/', '', $string); // Number transform.
 }
 
+function telephoneFormater($number){
+        if(strlen($number) == 10){
+            $new = substr_replace($number, '(', 0, 0);
+            $new = substr_replace($new, '9', 3, 0);
+            $new = substr_replace($new, ')', 3, 0);
+            $new = substr_replace($new, '-', 9, 0);
+        }else if(strlen($number) == 8) {
+            $new = substr_replace($number, '-', 4, 0);
+        }else{
+            $new = substr_replace($number, '(', 0, 0);
+            $new = substr_replace($new, ')', 3, 0);
+            $new = substr_replace($new, '-', 7, 0);
+        }
+        return $new;
+}
+
+//Format a date
+function stringToDate($dbDate){
+    return date("d/m/Y",strtotime($dbDate));
+}
 
 /*Return a formated date (Pt-br)*/
 function formatDate($string){

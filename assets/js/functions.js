@@ -39,8 +39,8 @@ $(function () {
             { "width": "230px", targets: 6 },//Logradouro
             { "width": "auto", targets: 7 },//numero
             { "width": "230px", targets: 8 },//Bairro
-            { "width": "auto", targets: 9 },//Telefone
-            { "width": "auto", targets: 10 },//Telefone
+            { "width": "100px", targets: 9 },//Telefone
+            { "width": "100px", targets: 10 },//Telefone
             { "width": "auto", targets: 11 },//Contato
             { "width": "auto", targets: 12 },//Zoneamento
             { "width": "auto", targets: 13 }//Situacao
@@ -66,9 +66,14 @@ function setupPhoneMaskOnField(selector){
 function setCorrectPhoneMask(element){
   if (element.inputmask('unmaskedvalue').length > 10 ){
     element.inputmask('remove');
-    element.inputmask('(99) 9999[9]-9999')
+    element.inputmask('(99) [9]9999-9999')
   } else {
     element.inputmask('remove');
     element.inputmask({mask: '(99) 9999-9999[9]', greedy: false})
   }
 }
+
+ function applyMask(){
+    setupPhoneMaskOnField('#tel');
+    setupPhoneMaskOnField('#tel2');
+};

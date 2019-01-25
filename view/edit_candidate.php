@@ -11,8 +11,8 @@ $candidate = loadCandidateUpdate($_GET['id']);
 	<div class="container">
         <div id="page-content-wrapper">
             <section class="container-fluid text-center">
-                <h1 class="mb-5">Cadastrar Candidato</h1>
-                <form action="../controller/insert_candidate.php" method="post">
+                <h1 class="mb-5">Editar Candidato</h1>
+                <form action="../controller/edit_candidate.php" method="post">
 	                <div class="row my-md-2"> 
 	                    <div class="col-md-8 col-sm-12">
 	                    	<div class="input-group mb-md-3 mb-sm-1">
@@ -38,7 +38,7 @@ $candidate = loadCandidateUpdate($_GET['id']);
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-tel">Telefone</span>
 							  </div>
-							  <input type="tel" required class="form-control" id="tel" name="tel" aria-describedby="basic-addon-tel" value="<?php echo $candidate->telephone ?>">
+							  <input type="text" required minlength="8" class="form-control" id="tel" name="tel" aria-describedby="basic-addon-tel" value="<?php echo $candidate->telephone ?>">
 							</div>                      
 	                    </div>
 	                    <div class="col-md-4 col-sm-12">
@@ -46,7 +46,7 @@ $candidate = loadCandidateUpdate($_GET['id']);
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-tel2">telefone</span>
 							  </div>
-							  <input type="tel" required class="form-control" id="tel2" name="tel2" aria-describedby="basic-addon-tel2" value="<?php echo $candidate->telephone2 ?>">
+							  <input type="text" required minlength="8" class="form-control" id="tel2" name="tel2" aria-describedby="basic-addon-tel2" value="<?php echo $candidate->telephone2 ?>">
 							</div>                      
 	                    </div>
 	                    <div class="col-md-4 col-sm-12">
@@ -105,10 +105,41 @@ $candidate = loadCandidateUpdate($_GET['id']);
 	                    </div>
 					</div>
 
+					<div class="row my-md-2"> 
+	                    <div class="col-md-4 col-sm-4">
+	                    	<div class="input-group mb-md-3 mb-sm-1">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text" id="basic-addon-contact">Contato</span>
+							  </div>
+							  <input type="text" required class="form-control" id="contact" name="contact" aria-describedby="basic-addon-contact" value="<?php echo $candidate->contact ?>">
+							</div>                      
+	                    </div>
+	                    <div class="col-md-4 col-sm-4">
+	                    	<div class="input-group mb-md-3 mb-sm-1">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text" id="basic-addon-destination">Destino</span>
+							  </div>
+							  <input type="text" required class="form-control" id="destination" name="destination" aria-describedby="basic-addon-destination" value="<?php echo $candidate->destination ?>">
+							</div>
+	                    </div>
+	                    <div class="col-md-4 col-sm-4">
+	                    	<div class="input-group mb-md-3 mb-sm-1">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text" id="basic-addon-situation">Situação</span>
+							  </div>	
+							  <input type="text" required class="form-control" id="situation" name="situation" aria-describedby="basic-addon-situation" value="<?php echo $candidate->situation ?>">
+							</div>
+	                    </div>
+					</div>
+					<input type="hidden" id="id" name="id" value="<?php echo $candidate->id ?>">
 					<div class="row my-md-2 justify-content-around mt-5">
-	                    <div class="form-group col-md-6 col-sm-12">
-	                       <label class="sr-only" for="inserir">Inserir</label>
-	                       <button type="submit" class="btn btn-secondary btn-block" id="insert" name="insert">Inserir</button>
+	                    <div class="form-group col-md-6 col-sm-6">
+	                       <label class="sr-only" for="edit">Inserir</label>
+	                       <button type="submit" class="btn btn-success btn-block" id="edit" name="edit">Editar</button>
+	                    </div>
+	                    <div class="form-group col-md-6 col-sm-6">
+	                       <label class="sr-only" for="cancel">Cancelar</label>
+	                       <a href="index.php" class="btn btn-danger btn-block" id="cancel" name="cancel">Cancelar</a>
 	                    </div>
 	                </div>
                 </form>
@@ -123,9 +154,4 @@ $candidate = loadCandidateUpdate($_GET['id']);
     <div class="container p-5 m-2">
     </div>
 <?php require_once abspath().'/view/template/frontend/footer.php'; ?>
-<script>
-	$(document).ready(function(){
-		setupPhoneMaskOnField('#tel');
-		setupPhoneMaskOnField('#tel2')
-	});
-</script>
+<script type="text/javascript">applyMask()</script>
