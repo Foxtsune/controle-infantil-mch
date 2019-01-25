@@ -11,6 +11,15 @@ function getAllCandidates(){
 	$candidates = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $candidates;
 }
+/*Get cadidate by Id*/
+function getCandidateById($id){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("SELECT * FROM `candidate` WHERE id = :id");
+	$statement->bindParam(':id', $id);
+	$statement->execute();
+	$candidate = $statement->fetch(PDO::FETCH_OBJ);
+	return $candidate;
+}
 
 function insertCandidate($name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2){
 	$conn = dbConnetion();

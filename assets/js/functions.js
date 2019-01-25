@@ -30,19 +30,20 @@ $(function () {
         "scrollCollapse": true,
         "paging":         true,
         "columnDefs": [
-            { "width": "230px", targets: 0 },//nome
-            { "width": "auto", targets: 1 },//dtCad
-            { "width": "auto", targets: 2 },//dtNasc
-            { "width": "230px", targets: 3 },//Pai
-            { "width": "230px", targets: 4 },//Mae
-            { "width": "230px", targets: 5 },//Logradouro
-            { "width": "auto", targets: 6 },//numero
-            { "width": "230px", targets: 7 },//Bairro
-            { "width": "auto", targets: 8 },//Telefone
+            { "width": "auto", targets: 0 },//img
+            { "width": "230px", targets: 1 },//nome
+            { "width": "auto", targets: 2 },//dtCad
+            { "width": "auto", targets: 3 },//dtNasc
+            { "width": "230px", targets: 4 },//Pai
+            { "width": "230px", targets: 5 },//Mae
+            { "width": "230px", targets: 6 },//Logradouro
+            { "width": "auto", targets: 7 },//numero
+            { "width": "230px", targets: 8 },//Bairro
             { "width": "auto", targets: 9 },//Telefone
-            { "width": "auto", targets: 10 },//Contato
-            { "width": "auto", targets: 11 },//Zoneamento
-            { "width": "auto", targets: 12 }//Situacao
+            { "width": "auto", targets: 10 },//Telefone
+            { "width": "auto", targets: 11 },//Contato
+            { "width": "auto", targets: 12 },//Zoneamento
+            { "width": "auto", targets: 13 }//Situacao
         ],
         "fixedColumns": true
     });
