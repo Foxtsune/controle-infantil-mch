@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";// precisa incluir por que está sendo enviado através de um formulario
-include abspath().'/model/candidate.php';
+include abspath().'/model/candidates.php';
 
 if (isset($_POST['insert'])) {
 	if (isset($_POST['name']) || isset($_POST['birth']) || isset($_POST['tel']) || isset($_POST['tel2']) || isset($_POST['inscription'])  || isset($_POST['neighborhood']) || isset($_POST['street'])  || isset($_POST['number'])  || isset($_POST['father'])  || isset($_POST['mother'])) {
@@ -18,7 +18,8 @@ if (isset($_POST['insert'])) {
 
 
 		//$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2
-		insertCandidate($name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2);
+		insertCandidates($name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2);
+		
 		header('location: ../view/index.php');
 
 	}else{

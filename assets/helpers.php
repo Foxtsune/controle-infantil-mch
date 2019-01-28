@@ -13,12 +13,11 @@ function myURL(){
 
 /*Checks if the session OK*/
 function validateSession(){
-	if (!isset($_SESSION['id']) || !isset($_SESSION['username']) /*|| $_SESSION['last_activity'] < time() SESSEION TIMOUT*/) {
+	if (!isset($_SESSION['id']) || !isset($_SESSION['name']) /*|| $_SESSION['last_activity'] < time() SESSEION TIMOUT*/) {
 		unset($_SESSION['id']);
-		unset($_SESSION['username']);
+		unset($_SESSION['name']);
 		session_destroy();
-		$location = abspath().'view/frontend/login.php';
-		header('location: '. myURL().'view/frontend/login.php');
+		header('location: '. myURL().'view/login.php');
 		exit;
 	}
 }
@@ -125,12 +124,12 @@ function formatDate($string){
 
 /*Activates a modal success or error*/
 function triggerModal(){
-    if ($_SESSION['data']['type']=="Erro") {
-        include_once abspath()."view/template/backend/modalError.php";
-    } else if ($_SESSION['data']['type']=="Sucesso") {
-        include_once abspath()."view/template/backend/modalSuccess.php";
-    } 
-    // print_r($_SESSION['data']);
+    if ($_SESSION['data']['type']=="Error") {
+        include_once abspath()."/view/template/frontend/modalError.php";
+    } else if ($_SESSION['data']['type']=="Success") {
+        include_once abspath()."/view/template/frontend/modalSuccess.php";
+    }
+    //print_r($_SESSION['data']);
     // unset($_SESSION['data']['type']);
     unset($_SESSION['data']);
 }

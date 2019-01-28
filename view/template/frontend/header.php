@@ -24,18 +24,15 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top row">
       <div class="container">
-        <a class="navbar-brand mr-sm-5" href="index.php">
+        <a class="navbar-brand" href="index.php">
           <img class="img-fluid" src="../assets/img/brasão.png" alt="Brasão Machado">
-          <span class="text-uppercase col-sm-12">Monitoramento de Vagas da Educação Infantil</span>
         </a>
+        <a href="index.php" class="decoClear h5"><span class="text-uppercase d-none d-md-block">Monitoramento de Vagas da Educação Infantil</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="mynavbar">
           <ul class="navbar-nav ml-auto bareffect">
-            <li class="position-relative">
-              <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
-            </li>
             <li class="position-relative">
               <a class="nav-link" href="new_candidate.php">Inserir Candidato</a>
             </li>
@@ -45,8 +42,15 @@
             <li class="position-relative">
               <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="position-relative">
-              <a class="nav-link" href="#">Link</a>
+            <li class="nav-item dropdown position-relative">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
             </li>
           </ul>
         </div>

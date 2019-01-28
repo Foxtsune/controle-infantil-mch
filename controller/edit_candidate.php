@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";// precisa incluir por que está sendo enviado através de um formulario
-include abspath().'/model/candidate.php';
+include abspath().'/model/candidates.php';
 
 function loadCandidateUpdate($id){
 	return getCandidateById($id);	
@@ -19,12 +19,12 @@ if (isset($_POST['edit'])) {
 	$number = $_POST['number'];
 	$father = $_POST['father'];
 	$mother =  $_POST['mother'];
-	$contact = $_POST['contact'];;
-	$destination = $_POST['destination'];;
-	$situation = $_POST['situation'];;
+	$contact = $_POST['contact'];
+	$destination = $_POST['destination'];
+	$situation = $_POST['situation'];
 
 	try {
-			updateCandidate($id,$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2,$contact,$destination,$situation);
+			updateCandidates($id,$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2,$contact,$destination,$situation);
 			header('location: '. myURL(). 'view/index.php');
 			exit;
 		} catch (PDOException $e) {

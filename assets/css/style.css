@@ -133,6 +133,12 @@ transform: translateY(0.625rem);
 	opacity: 1;
 }
 
+.decoClear, .decoClear:hover{
+    color: #000000; /*color of your choosing*/
+    text-decoration: none;
+    font-weight: normal;
+}
+
 /* SOBRE 
 -------------------------------------------------- */
 .arredondar{
@@ -146,7 +152,7 @@ transform: translateY(0.625rem);
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 5.5rem; /* Set the fixed height of the footer here */
+  height: 5.9rem; /* Set the fixed height of the footer here */
   line-height: 2.1rem; /* Vertically center the text there */
   font-size: 1.2rem;
   background-color: #cdcdcd;
@@ -165,3 +171,4 @@ transform: translateY(0.625rem);
     font-size: 2rem;
   }
 }
+

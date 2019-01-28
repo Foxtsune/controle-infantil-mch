@@ -1,5 +1,5 @@
 /*DATATABLE*/
-$(function () {
+function Datatable() {
     $('#table_id').DataTable({
     	/*TRADUÇÕES*/
     	"language": {
@@ -47,7 +47,7 @@ $(function () {
         ],
         "fixedColumns": true
     });
-});
+};
 
 
 /*MODAL TRIGGER*/
