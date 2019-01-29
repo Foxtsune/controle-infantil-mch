@@ -11,20 +11,20 @@ if (isset($_GET['id'])) {
 
 	if (!getCandidateById($id)) {
 		//caso passem id inválido via URL
-		$dados = array('msg' => 'ID inválido', 'type' => $error);
-		$_SESSION['data'] = $dados;
+		$data = array('msg' => 'ID inválido', 'type' => $error);
+		$_SESSION['data'] = $data;
 	  	header("Location:".myURL()."view/index.php");
 	  	exit;
 	}
 
 	try {
 		deleteCandidate($id);
-		$_SESSION['data'] = array('msg' => "Candidato excluido com sucesso", 'type' => $success); 
+		$_SESSION['data'] = array('msg' => "Candidato excluido com sucesso.", 'type' => $success); 
 		header('location: '. myURL(). 'view/index.php');
 		exit;
 	} catch (PDOException $e) {
-		$dados = array('msg' => 'Error:'.$e->getMessage(), 'type' => $error);
-    	$_SESSION['data'] = $dados;
+		$data = array('msg' => 'Error:'.$e->getMessage(), 'type' => $error);
+    	$_SESSION['data'] = $data;
     	header('location: '. myURL(). 'view/index.php');
 		exit;
 	}

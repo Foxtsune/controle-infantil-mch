@@ -22,7 +22,7 @@ function getCandidateById($id){
 	return $candidate;
 }
 
-function insertcandidates($name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2){
+function insertCandidates($name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2){
 	$conn = dbConnetion();
 	$statement = $conn->prepare("INSERT INTO `candidates` (name,birth,inscription,mother,father,street,number,neighborhood,telephone,telephone2) 
 		VALUES(:name,:birth,:inscription,:mother,:father,:street,:number,:neighborhood,:tel,:tel2)");
@@ -33,7 +33,7 @@ function insertcandidates($name,$birth,$inscription,$mother,$father,$street,$num
 	return $statement->rowCount();
 }
 
-function updatecandidates($id,$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2,$contact,$destination,$situation){
+function updateCandidates($id,$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2,$contact,$destination,$situation){
 	$conn = dbConnetion();
 	$statement = $conn->prepare("UPDATE `candidates` SET name=:name, birth=:birth, 
 								inscription=:inscription, mother=:mother, father=:father, street=:street, 

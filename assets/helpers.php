@@ -24,8 +24,8 @@ function validateSession(){
 
 /*Checks if is a system administrator*/
 function isAdmin(){
-	if (!($_SESSION['id']==1)) {
-		header('location: '. myURL(). 'view/backend/home.php');
+	if (!($_SESSION['admin']==1)) {
+		header('location: '. myURL(). 'view/index.php');
 	}
 }
 

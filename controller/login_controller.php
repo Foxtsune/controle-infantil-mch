@@ -20,6 +20,7 @@
 			if($user != null) {
 				$_SESSION['id'] = $user->id;
 		  		$_SESSION['name'] = $user->name;
+		  		$_SESSION['admin'] = $user->admin;
 		  		header('location: index.php');
 		  		exit;
 			} else {

@@ -29,12 +29,12 @@ if (isset($_POST['edit'])) {
 
 	try {
 		updateCandidates($id,$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2,$contact,$destination,$situation);
-		$_SESSION['data'] = array('msg' => 'Candidato editado com sucesso', 'type' => $success); 
+		$_SESSION['data'] = array('msg' => 'Candidato editado com sucesso.', 'type' => $success); 
 		header('location: '. myURL(). 'view/index.php');
 		exit;
 	} catch (PDOException $e) {
-		$dados = array('msg' => 'Erro:'.$e->getMessage(), 'type' => $error);//DEBUG MSG
-    	$_SESSION['data'] = $dados;
+		$data = array('msg' => 'Erro:'.$e->getMessage(), 'type' => $error);//DEBUG MSG
+    	$_SESSION['data'] = $data;
     	header('location: '. myURL(). 'view/index.php');
 		exit;
 	}

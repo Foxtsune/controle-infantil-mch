@@ -20,7 +20,6 @@
   </head>
   
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top row">
       <div class="container">
@@ -37,19 +36,19 @@
               <a class="nav-link" href="new_candidate.php">Inserir Candidato</a>
             </li>
             <li class="position-relative">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#">Exportar</a>
             </li>
-            <li class="position-relative">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+            <?php if ($_SESSION['admin']==1): ?>
+              <li class="position-relative">
+                <a class="nav-link" href="#">Usuários</a>
+              </li>
+            <?php endif ?>
             <li class="nav-item dropdown position-relative">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']?></a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="edit_user.php">Meus dados</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
+                <a class="dropdown-item" href="#">Sair</a>
               </div>
             </li>
           </ul>

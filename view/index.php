@@ -13,6 +13,7 @@ validateSession();
 <!-- Page Content -->
     <div id="page-content-wrapper" style="width: 100%">
         <section class="container-fluid">
+            <p><h3>Bem vindo <?php echo $_SESSION['name'] ?></h3></p><br>
             <table id="table_id" class="display table table-bordered">
                 <thead>
                     <!-- 15306 default column size javascrip file  -->

@@ -22,3 +22,10 @@ function getUserById($id){
 	$user = $statement->fetch(PDO::FETCH_OBJ);
 	return $user;
 }
+
+function updateUser($id,$name,$email,$password,$admin){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("UPDATE `users` SET name=:name, email=:email, admin=:admin,  WHERE id=:id");
+	$statement->execute(array(":name"=>$name,":email"=>$email,":admin"=>$admin,":id"=>$id));
+	return $statement->rowCount();
+}
