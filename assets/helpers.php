@@ -129,7 +129,7 @@ function triggerModal(){
     } else if ($_SESSION['data']['type']=="Success") {
         include_once abspath()."/view/template/frontend/modalSuccess.php";
     }
-    //print_r($_SESSION['data']);
+    print_r($_SESSION['data']);
     // unset($_SESSION['data']['type']);
     unset($_SESSION['data']);
 }

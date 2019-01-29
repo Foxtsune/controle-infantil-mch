@@ -139,7 +139,7 @@ $candidate = loadCandidateUpdate($_GET['id']);
 	                    </div>
 	                    <div class="form-group col-md-6 col-sm-6">
 	                       <label class="sr-only" for="cancel">Cancelar</label>
-	                       <a href="index.php" class="btn btn-danger btn-block" id="cancel" name="cancel">Cancelar</a>
+	                       <a href="index.php" class="btn btn-secondary btn-block" id="cancel" name="cancel">Cancelar</a>
 	                    </div>
 	                </div>
                 </form>

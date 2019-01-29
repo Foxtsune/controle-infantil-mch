@@ -129,3 +129,4 @@ require_once abspath().'/view/template/frontend/header.php';
     <div class="container p-5 m-2">
     </div>
 <?php require_once abspath().'/view/template/frontend/footer.php'; ?>
+<script type="text/javascript">applyMask()</script>

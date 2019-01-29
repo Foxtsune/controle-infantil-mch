@@ -51,8 +51,9 @@ validateSession();
                         <td scope="row" class="text-center"><?php echo $column->contact ?></td>
                         <td scope="row" class="text-center"><?php echo $column->destination ?></td>
                         <td scope="row" class="text-center"><?php echo $column->situation ?></td>
-                        <td scope="row" class="text-center"><a href="delete_candidate.php?id=<?php echo $column->id ?>"><img src="../assets/img/delete.png" width="30" height="30"></a></td>
-
+                        <td scope="row" class="text-center">
+                            <a href="#" data-href="delete_candidate.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete"><img src="../assets/img/delete.png" width="30" height="30"></a>
+                        </td>
                     </tr>
                     <?php endforeach ?>
                 </tbody>
@@ -62,5 +63,11 @@ validateSession();
     <!-- EMPTY DIV - PUSH FOOTER -->
     <div class="container p-5 m-2">
     </div>
-<?php require_once abspath().'/view/template/frontend/footer.php'; ?>
-<script type="text/javascript">Datatable()</script>
+
+<?php
+require_once abspath().'/view/template/frontend/footer.php';
+require_once abspath().'/view/template/frontend/delete_modal.php';
+?>
+<script type="text/javascript">datatableApply()</script>
+
+<?php if (isset($_SESSION['data'])) {triggerModal();}?>

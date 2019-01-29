@@ -1,10 +1,14 @@
 <?php
+session_start();
 require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";// precisa incluir por que está sendo enviado através de um formulario
 include abspath().'/model/candidates.php';
 
 function loadCandidateUpdate($id){
 	return getCandidateById($id);	
 }
+
+$error = "Error";
+$success = "Success";
 
 if (isset($_POST['edit'])) {
 
@@ -24,14 +28,14 @@ if (isset($_POST['edit'])) {
 	$situation = $_POST['situation'];
 
 	try {
-			updateCandidates($id,$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2,$contact,$destination,$situation);
-			header('location: '. myURL(). 'view/index.php');
-			exit;
-		} catch (PDOException $e) {
-			echo $e->getMessage();
-			//$dados = array('msg' => 'Erro:'.$e->getMessage(), 'type' => $erro);
-	    	//$_SESSION['data'] = $dados;
-	    	//header('location: '. myURL(). 'view/index.php');
-			exit;
-		}
+		updateCandidates($id,$name,$birth,$inscription,$mother,$father,$street,$number,$neighborhood,$tel,$tel2,$contact,$destination,$situation);
+		$_SESSION['data'] = array('msg' => 'Candidato editado com sucesso', 'type' => $success); 
+		header('location: '. myURL(). 'view/index.php');
+		exit;
+	} catch (PDOException $e) {
+		$dados = array('msg' => 'Erro:'.$e->getMessage(), 'type' => $error);//DEBUG MSG
+    	$_SESSION['data'] = $dados;
+    	header('location: '. myURL(). 'view/index.php');
+		exit;
+	}
 }

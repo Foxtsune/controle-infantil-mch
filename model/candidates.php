@@ -11,6 +11,7 @@ function getAllCandidates(){
 	$candidates = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $candidates;
 }
+
 /*Get cadidate by Id*/
 function getCandidateById($id){
 	$conn = dbConnetion();
@@ -45,6 +46,10 @@ function updatecandidates($id,$name,$birth,$inscription,$mother,$father,$street,
 	return $statement->rowCount();
 }
 
-function deleteCandidate(){
-	return;
+function deleteCandidate($id){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("DELETE FROM `candidates` WHERE id=:id");
+	$statement->bindParam(':id', $id);
+	$statement->execute();
+	return $statement->rowCount();
 }

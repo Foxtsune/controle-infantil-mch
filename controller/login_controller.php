@@ -10,7 +10,7 @@
 	if(isset($_POST['signed'])) {// vem do formulário login
 
 		$email = $_POST['email'];
-		$password = $_POST['password'];//CODIFICA-LA DEPOIS!!!!!!!!!!!!!!!!!!!! MD5
+		$password = md5($_POST['password']);//CODIFICA-LA DEPOIS!!!!!!!!!!!!!!!!!!!! MD5
 
 		if(!isset($email) || !isset($password)) {
 			$dados = array('msg' => 'Todos os campos são necessários', 'type' => $error);
