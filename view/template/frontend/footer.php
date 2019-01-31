@@ -19,7 +19,6 @@
     <script type="text/javascript" src="../assets/js/dataTables.bootstrap4.js"></script>
     <!-- Mask Scrip -->
     <script src="../assets/js/jquery.inputmask.bundle.min.js"></script>
-
     <script src="../assets/js/functions.js"></script>
   </body>
 </html>

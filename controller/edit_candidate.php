@@ -7,8 +7,8 @@ function loadCandidateUpdate($id){
 	return getCandidateById($id);	
 }
 
-$error = "Error";
-$success = "Success";
+$error = "Erro";
+$success = "Sucesso";
 
 if (isset($_POST['edit'])) {
 

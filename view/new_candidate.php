@@ -3,7 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";
 
 require_once abspath().'/controller/insert_candidate.php';
 require_once abspath().'/view/template/frontend/header.php';
-
+validateSession();
 ?>
 
 

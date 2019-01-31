@@ -4,6 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";
 require_once abspath().'/controller/edit_user.php';
 require_once abspath().'/view/template/frontend/header.php';
 $user = loadUserUpdate($_SESSION['id']);
+validateSession();
 ?>
 
 
@@ -14,15 +15,15 @@ $user = loadUserUpdate($_SESSION['id']);
                 <h1 class="mb-5">Atualizar Dados</h1>
                 <form action="../controller/edit_user.php" method="post">
 	                <div class="row my-md-2">
-	                    <div class="col-md-8 col-sm-12">
+	                    <div class="col-md-5 col-sm-12">
 	                    	<div class="input-group mb-md-3 mb-sm-1">
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-name">Nome</span>
 							  </div>
 							  <input type="text" required class="form-control" id="name" name="name" aria-describedby="basic-addon-name" value="<?php echo $user->name ?>">
-							</div>                      
+							</div>
 	                    </div>
-	                    <div class="col-md-1 col-sm-12">
+	                    <div class="col-md-1 col-sm-1">
 						  	<div class="custom-control custom-checkbox">
 							  <input type="checkbox" class="custom-control-input" id="admin" name="admin" value="<?php echo $user->admin ?>" <?php if ($user->admin == 1) {echo "checked";} ?>>
 							  <label class="custom-control-label" for="admin">Administrador</label>
@@ -30,12 +31,12 @@ $user = loadUserUpdate($_SESSION['id']);
 	                    </div>
 					</div>
 					<div class="row my-md-2">
-	                    <div class="col-md-8 col-sm-12">
+	                    <div class="col-md-5 col-sm-12">
 	                    	<div class="input-group mb-md-3 mb-sm-1">
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-name">Email</span>
 							  </div>
-							  <input type="email" required class="form-control" id="name" name="name" aria-describedby="basic-addon-name" value="<?php echo $user->email ?>">
+							  <input type="email" required class="form-control" id="email" name="email" email="email" aria-describedby="basic-addon-email" value="<?php echo $user->email ?>">
 							</div>                      
 	                    </div>
 	                    <div class="col-md-4 col-sm-12">
@@ -47,6 +48,7 @@ $user = loadUserUpdate($_SESSION['id']);
 							</div>                      
 	                    </div>
 					</div>
+					<input type="hidden" id="id" name="id" value="<?php echo $user->id ?>">
 					<div class="row my-md-2 justify-content-around mt-5">
 	                    <div class="form-group col-md-6 col-sm-6">
 	                       <label class="sr-only" for="edit">Inserir</label>

@@ -13,7 +13,7 @@ validateSession();
 <!-- Page Content -->
     <div id="page-content-wrapper" style="width: 100%">
         <section class="container-fluid">
-            <p><h3>Bem vindo <?php echo $_SESSION['name'] ?></h3></p><br>
+            <p><h3><u>Bem vindo <?php echo $_SESSION['name'] ?></u></h3></p><br>
             <table id="table_id" class="display table table-bordered">
                 <thead>
                     <!-- 15306 default column size javascrip file  -->
@@ -69,6 +69,8 @@ validateSession();
 require_once abspath().'/view/template/frontend/footer.php';
 require_once abspath().'/view/template/frontend/delete_modal.php';
 ?>
-<script type="text/javascript">datatableApply()</script>
-
-<?php if (isset($_SESSION['data'])) {triggerModal();}?>
+<script type="text/javascript">
+    datatableApply(); 
+    $('.dropdown-toggle').dropdown()
+</script>
+<?php if (isset($_SESSION['data']))triggerModal() ?>

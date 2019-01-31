@@ -4,13 +4,13 @@
 	require abspath().'/model/users.php';
 	
 
-	$error = "Error";
-	$success = "Success";
+	$error = "Erro";
+	$success = "Sucesso";
 
 	if(isset($_POST['signed'])) {// vem do formulário login
 
 		$email = $_POST['email'];
-		$password = md5($_POST['password']);//CODIFICA-LA DEPOIS!!!!!!!!!!!!!!!!!!!! MD5
+		$password = md5($_POST['password']);
 
 		if(!isset($email) || !isset($password)) {
 			$dados = array('msg' => 'Todos os campos são necessários', 'type' => $error);
@@ -26,6 +26,8 @@
 			} else {
 				$dados = array('msg' => 'Usuário ou senha incorreto!', 'type' => $error);
 				$_SESSION['data'] = $dados;
+				header('location: login.php');
+		  		exit;
 			}
 		}
 	}

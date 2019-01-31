@@ -3,6 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";
 require_once abspath().'/controller/edit_candidate.php';
 require_once abspath().'/view/template/frontend/header.php';
 $candidate = loadCandidateUpdate($_GET['id']);
+validateSession();
 ?>
 
 

@@ -26,6 +26,7 @@ function validateSession(){
 function isAdmin(){
 	if (!($_SESSION['admin']==1)) {
 		header('location: '. myURL(). 'view/index.php');
+        exit;
 	}
 }
 
@@ -124,12 +125,12 @@ function formatDate($string){
 
 /*Activates a modal success or error*/
 function triggerModal(){
-    if ($_SESSION['data']['type']=="Error") {
+    if ($_SESSION['data']['type']=="Erro") {
         include_once abspath()."/view/template/frontend/modalError.php";
-    } else if ($_SESSION['data']['type']=="Success") {
+    } else if ($_SESSION['data']['type']=="Sucesso") {
         include_once abspath()."/view/template/frontend/modalSuccess.php";
     }
-    print_r($_SESSION['data']);
+    //print_r($_SESSION['data']);
     // unset($_SESSION['data']['type']);
     unset($_SESSION['data']);
 }

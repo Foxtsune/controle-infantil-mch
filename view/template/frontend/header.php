@@ -33,7 +33,10 @@
         <div class="collapse navbar-collapse " id="mynavbar">
           <ul class="navbar-nav ml-auto bareffect">
             <li class="position-relative">
-              <a class="nav-link" href="new_candidate.php">Inserir Candidato</a>
+              <a class="nav-link" href="index.php">Home</a>
+            </li>
+            <li class="position-relative">
+              <a class="nav-link" href="new_candidate.php">Inserir</a>
             </li>
             <li class="position-relative">
               <a class="nav-link" href="#">Exportar</a>
@@ -43,9 +46,12 @@
                 <a class="nav-link" href="#">Usuários</a>
               </li>
             <?php endif ?>
-            <li class="nav-item dropdown position-relative">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']?></a>
-              <div class="dropdown-menu">
+          </ul>
+          <ul class="navbar-nav">
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']?></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="edit_user.php">Meus dados</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Sair</a>

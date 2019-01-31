@@ -2,13 +2,13 @@ TODO:
 
 {Adicionar um campo no banco para controle de quem realizou a inserção.}
 
-{Consertar responsividade do cabeçalho}
+{Consertar responsividade do cabeçalho}V
 
 {Contextual classes
 Use contextual classes to color table rows or individual cells
 Para Conf. Desist. Warn.}
 
+Primeiro realizar os logins criando a tabela usuários
+!!!!{Deletar candidato continuar}V
 
-
-Primeiro realizr os logins criando a tabela usuários
-!!!!{Deletar candidato continuar}
+Corrigir dropdown hover do cabeçalho

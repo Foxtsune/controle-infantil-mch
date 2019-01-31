@@ -3,8 +3,8 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";// precisa incluir por que está sendo enviado através de um formulario
 include abspath().'/model/candidates.php';
 
-$success = "Success";
-$error = "Error";
+$error = "Erro";
+$success = "Sucesso";
 
 if (isset($_POST['insert'])) {
 	if (!isset($_POST['name']) || !isset($_POST['birth']) || !isset($_POST['tel']) || !isset($_POST['tel2']) || !isset($_POST['inscription'])  || !isset($_POST['neighborhood']) || !isset($_POST['street'])  || !isset($_POST['number'])  || !isset($_POST['father'])  || !isset($_POST['mother'])) {

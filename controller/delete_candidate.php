@@ -6,8 +6,8 @@ include abspath().'/model/candidates.php';
 if (isset($_GET['id'])) {
 
 	$id = $_GET['id'];
-	$error = "Error";
-	$success = "Success";
+	$error = "Erro";
+	$success = "Sucess";
 
 	if (!getCandidateById($id)) {
 		//caso passem id inválido via URL

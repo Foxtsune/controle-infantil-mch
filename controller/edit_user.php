@@ -3,8 +3,8 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";// precisa incluir por que está sendo enviado através de um formulario
 include abspath().'/model/users.php';
 
-$error = "Error";
-$success = "Success";
+$error = "Erro";
+$success = "Sucesso";
 
 function loadUserUpdate($id){
 	return getUserById($id);
@@ -12,7 +12,7 @@ function loadUserUpdate($id){
 
 if (isset($_POST['edit'])) {
 
-	$id = $_SESSION['id'];
+	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
