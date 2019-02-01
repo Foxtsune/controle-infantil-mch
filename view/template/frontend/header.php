@@ -26,11 +26,11 @@
         <a class="navbar-brand" href="index.php">
           <img class="img-fluid" src="../assets/img/brasão.png" alt="Brasão Machado">
         </a>
-        <a href="index.php" class="decoClear h5"><span class="text-uppercase d-none d-md-block">Monitoramento de Vagas da Educação Infantil</span></a>
+        <a href="index.php" class="decoClear h5"><span class="text-uppercase d-none d-md-block">Monitoramento de Vagas da<br>Educação Infantil</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="mynavbar">
+        <div class="collapse navbar-collapse" id="mynavbar">
           <ul class="navbar-nav ml-auto bareffect">
             <li class="position-relative">
               <a class="nav-link" href="index.php">Home</a>
@@ -54,7 +54,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="edit_user.php">Meus dados</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Sair</a>
+                <a class="dropdown-item" href="../controller/logoff.php">Sair</a>
               </div>
             </li>
           </ul>

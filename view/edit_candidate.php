@@ -81,7 +81,7 @@ validateSession();
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-number">Número</span>
 							  </div>
-							  <input type="number" required class="form-control" id="number" name="number" aria-describedby="basic-addon-number" value="<?php echo $candidate->number ?>">
+							  <input type="number" min="0" required class="form-control" id="number" name="number" aria-describedby="basic-addon-number" value="<?php echo $candidate->number ?>">
 							</div>
 	                    </div>
 					</div>
@@ -135,11 +135,11 @@ validateSession();
 					<div class="row my-md-2 justify-content-around mt-5">
 	                    <div class="form-group col-md-6 col-sm-6">
 	                       <label class="sr-only" for="edit">Inserir</label>
-	                       <button type="submit" class="btn btn-success btn-block" id="edit" name="edit">Editar</button>
+	                       <button type="submit" class="btn btn-outline-success btn-block" id="edit" name="edit">Editar</button>
 	                    </div>
 	                    <div class="form-group col-md-6 col-sm-6">
 	                       <label class="sr-only" for="cancel">Cancelar</label>
-	                       <a href="index.php" class="btn btn-secondary btn-block" id="cancel" name="cancel">Cancelar</a>
+	                       <a href="index.php" class="btn btn-outline-secondary btn-block" id="cancel" name="cancel">Cancelar</a>
 	                    </div>
 	                </div>
                 </form>

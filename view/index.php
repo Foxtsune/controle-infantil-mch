@@ -14,7 +14,7 @@ validateSession();
     <div id="page-content-wrapper" style="width: 100%">
         <section class="container-fluid">
             <p><h3><u>Bem vindo <?php echo $_SESSION['name'] ?></u></h3></p><br>
-            <table id="table_id" class="display table table-bordered">
+            <table id="table_id" class="display table table-bordered table-hover">
                 <thead>
                     <!-- 15306 default column size javascrip file  -->
                     <tr id="theader">
