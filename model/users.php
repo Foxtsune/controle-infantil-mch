@@ -23,9 +23,16 @@ function getUserById($id){
 	return $user;
 }
 
-function updateUser($id,$name,$email,$password,$admin){
+function updateUser($id,$name,$email,$admin){
 	$conn = dbConnetion();
 	$statement = $conn->prepare("UPDATE `users` SET name=:name, email=:email, admin=:admin WHERE id=:id");
 	$statement->execute(array(":name"=>$name,":email"=>$email,":admin"=>$admin,":id"=>$id));
+	return $statement->rowCount();
+}
+
+function updatePassword($id,$password){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("UPDATE `users` SET password=:password WHERE id=:id");
+	$statement->execute(array(":password"=>$password,":id"=>$id));
 	return $statement->rowCount();
 }

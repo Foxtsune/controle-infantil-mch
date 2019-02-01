@@ -108,11 +108,11 @@ validateSession();
 					<div class="row my-md-2 justify-content-around mt-5">
 	                    <div class="form-group col-md-6 col-sm-6">
 	                       <label class="sr-only" for="insert">Inserir</label>
-	                       <button type="submit" class="btn btn-success btn-block" id="insert" name="insert">Inserir</button>
+	                       <button type="submit" class="btn btn-outline-success btn-block" id="insert" name="insert">Inserir</button>
 	                    </div>
 	                    <div class="form-group col-md-6 col-sm-6">
 	                       <label class="sr-only" for="cancel">Cancelar</label>
-	                       <a href="index.php" class="btn btn-danger btn-block" id="cancel" name="cancel">Cancelar</a>
+	                       <a href="index.php" class="btn btn-outline-secondary btn-block" id="cancel" name="cancel">Cancelar</a>
 	                    </div>
 	                </div>
 

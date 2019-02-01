@@ -171,3 +171,22 @@ transform: translateY(0.625rem);
     font-size: 2rem;
   }
 }
+
+/* CHECK-BUTTON BOOTSTRAP
+--------------------------*/
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #fff;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #cecece;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #000;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    background-color: #007bff;
+}
