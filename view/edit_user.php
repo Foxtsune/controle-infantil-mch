@@ -16,7 +16,7 @@ validateSession();
                 <form action="../controller/edit_user.php" method="post">
 	                <div class="row my-md-3 my-sm-5">
 	                    <div class="col-md-5 col-sm-12">
-	                    	<div class="input-group mb-md-3 mb-sm-1">
+	                    	<div class="input-group my-2">
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-name">Nome</span>
 							  </div>
@@ -24,24 +24,26 @@ validateSession();
 							</div>
 	                    </div>
 	                    <div class="col-md-5 col-sm-12">
-	                    	<div class="input-group mb-md-3 mb-sm-1">
+	                    	<div class="input-group my-2">
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-name">Email</span>
 							  </div>
 							  <input type="email" required class="form-control" id="email" name="email" email="email" aria-describedby="basic-addon-email" value="<?php echo $user->email ?>">
 							</div>                      
 	                    </div>
+	                    <div class="col-auto">
+	                    	<a href="#" data-href="delete_candidate.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete" class="btn btn-secondary my-2">Senha</a>
+	                    </div>
 					</div>
 					<div class="row my-md-3 mt-sm-5">
-						<div class="col-md-auto">
-	                    	<a href="#" data-href="delete_candidate.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete" class="btn btn-secondary">Senha</a>
-	                    </div>
+	                    <!-- 
 	                    <div class="col-md-1 ml-md-5 mt-md-2 my-sm-3">
 						  	<div class="custom-control custom-checkbox">
-							  <input type="checkbox" class="custom-control-input" id="admin" name="admin" value="1" <?php if ($user->admin == 1) {echo "checked";} ?>>
+							  <input type="checkbox" class="custom-control-input" id="admin" name="admin" value="1" <?php if ($user->admin == 1) {echo "checked";}else{echo "disabled";}?>>
 							  <label class="custom-control-label" for="admin">Administrador</label>
 							</div>
 	                    </div>
+	                    -->
 					</div>
 
 					<input type="hidden" id="password" name="password" value="<?php echo $user->password ?>">

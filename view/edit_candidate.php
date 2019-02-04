@@ -108,18 +108,22 @@ validateSession();
 					<div class="row my-md-2"> 
 	                    <div class="col-md-4 col-sm-4">
 	                    	<div class="input-group mb-md-3 mb-sm-1">
-							  <div class="input-group-prepend">
-							    <span class="input-group-text" id="basic-addon-contact">Contato</span>
-							  </div>
-							  <input type="text" required class="form-control" id="contact" name="contact" aria-describedby="basic-addon-contact" value="<?php echo $candidate->contact ?>">
+	                    		<div class="input-group-prepend">
+							    	<span class="input-group-text" id="basic-addon-contact">Contato</span>
+							  	</div>
+							  	<select class="custom-select" id="contact" name="contact" aria-describedby="basic-addon-contact">
+								  <?php echo checkContact($candidate->contact) ?>
+								</select>
 							</div>                      
 	                    </div>
 	                    <div class="col-md-4 col-sm-4">
 	                    	<div class="input-group mb-md-3 mb-sm-1">
-							  <div class="input-group-prepend">
-							    <span class="input-group-text" id="basic-addon-destination">Destino</span>
-							  </div>
-							  <input type="text" required class="form-control" id="destination" name="destination" aria-describedby="basic-addon-destination" value="<?php echo $candidate->destination ?>">
+							  	<div class="input-group-prepend">
+							    	<span class="input-group-text" id="basic-addon-destination">Destino</span>
+							  	</div>
+							  	<select class="custom-select" id="destination" name="destination" aria-describedby="basic-addon-destination">
+								  <?php echo checkDestination($candidate->destination) ?>
+								</select>
 							</div>
 	                    </div>
 	                    <div class="col-md-4 col-sm-4">
@@ -127,7 +131,9 @@ validateSession();
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-situation">Situação</span>
 							  </div>	
-							  <input type="text" required class="form-control" id="situation" name="situation" aria-describedby="basic-addon-situation" value="<?php echo $candidate->situation ?>">
+							  <select class="custom-select" id="situation" name="situation" aria-describedby="basic-addon-situation">
+								  <?php echo checkSituation($candidate->situation) ?>
+								</select>
 							</div>
 	                    </div>
 					</div>

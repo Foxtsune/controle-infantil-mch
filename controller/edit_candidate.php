@@ -7,6 +7,153 @@ function loadCandidateUpdate($id){
 	return getCandidateById($id);	
 }
 
+function checkContact($contact){
+	switch ($contact) {
+		case 'tel':
+			return "<option> </option>
+			<option value='tel' selected>Telefone</option>
+			<option value='letter'>Carta</option>";
+			break;
+		case 'letter':
+			return "<option> </option>
+			<option value='tel'>Telefone</option>
+			<option value='letter' selected>Carta</option>";
+			break;
+		default:
+			return "<option selected> </option>
+			<option value='tel'>Telefone</option>
+			<option value='letter'>Carta</option>";
+			break;
+	}
+}
+
+function checkDestination($destination){
+
+	$nursery = "CEMEI ";
+
+	switch ($destination) {
+		case 'CEMEAI':
+			return "<option> </option>
+			<option value='CEMEAI' selected>CEMEAI</option>
+			<option value='Donana'>".$nursery."Vovó Donana</option>
+			<option value='Guiomar'>".$nursery."Vovó Guiomar</option>
+			<option value='Iracema'>".$nursery."Vovó Iracema</option>
+			<option value='Jardim'>".$nursery."Jardim das Oliveiras</option>
+			<option value='Luiza'>".$nursery."Vovó Luiza</option>
+			<option value='Madre'>".$nursery."Madre Carmen Sallés</option>
+			<option value='Paulina'>".$nursery."Vovó Paulina</option>";
+			break;
+		case 'Donana':
+			return "<option> </option>
+			<option value='CEMEAI'>CEMEAI</option>
+			<option value='Donana' selected>".$nursery."Vovó Donana</option>
+			<option value='Guiomar'>".$nursery."Vovó Guiomar</option>
+			<option value='Iracema'>".$nursery."Vovó Iracema</option>
+			<option value='Jardim'>".$nursery."Jardim das Oliveiras</option>
+			<option value='Luiza'>".$nursery."Vovó Luiza</option>
+			<option value='Madre'>".$nursery."Madre Carmen Sallés</option>
+			<option value='Paulina'>".$nursery."Vovó Paulina</option>";
+			break;
+		case 'Guiomar':
+			return "<option> </option>
+			<option value='CEMEAI' selected>CEMEAI</option>
+			<option value='Donana'>".$nursery."Vovó Donana</option>
+			<option value='Guiomar' selected>".$nursery."Vovó Guiomar</option>
+			<option value='Iracema'>".$nursery."Vovó Iracema</option>
+			<option value='Jardim'>".$nursery."Jardim das Oliveiras</option>
+			<option value='Luiza'>".$nursery."Vovó Luiza</option>
+			<option value='Madre'>".$nursery."Madre Carmen Sallés</option>
+			<option value='Paulina'>".$nursery."Vovó Paulina</option>";
+			break;
+		case 'Iracema':
+			return "<option> </option>
+			<option value='CEMEAI' selected>CEMEAI</option>
+			<option value='Donana'>".$nursery." Vovó Donana</option>
+			<option value='Guiomar'>".$nursery." Vovó Guiomar</option>
+			<option value='Iracema' selected>".$nursery." Vovó Iracema</option>
+			<option value='Jardim'>".$nursery." Jardim das Oliveiras</option>
+			<option value='Luiza'>".$nursery."Vovó Luiza</option>
+			<option value='Madre'>".$nursery." Madre Carmen Sallés</option>
+			<option value='Paulina'>".$nursery." Vovó Paulina</option>";
+			break;
+		case 'Jardim':
+			return "<option> </option>
+			<option value='CEMEAI'>CEMEAI</option>
+			<option value='Donana'>".$nursery." Vovó Donana</option>
+			<option value='Guiomar'>".$nursery." Vovó Guiomar</option>
+			<option value='Iracema'>".$nursery." Vovó Iracema</option>
+			<option value='Jardim' selected>".$nursery." Jardim das Oliveiras</option>
+			<option value='Luiza'>".$nursery."Vovó Luiza</option>
+			<option value='Madre'>".$nursery." Madre Carmen Sallés</option>
+			<option value='Paulina'>".$nursery." Vovó Paulina</option>";
+			break;
+		case 'Luiza':
+			return "<option> </option>
+			<option value='CEMEAI'>CEMEAI</option>
+			<option value='Donana'>".$nursery."Vovó Donana</option>
+			<option value='Guiomar'>".$nursery."Vovó Guiomar</option>
+			<option value='Iracema'>".$nursery."Vovó Iracema</option>
+			<option value='Jardim'>".$nursery."Jardim das Oliveiras</option>
+			<option value='Luiza' selected>".$nursery."Vovó Luiza</option>
+			<option value='Madre'>".$nursery."Madre Carmen Sallés</option>
+			<option value='Paulina'>".$nursery."Vovó Paulina</option>";
+			break;
+		case 'Madre':
+			return "<option> </option>
+			<option value='CEMEAI' selected>CEMEAI</option>
+			<option value='Donana'>".$nursery."Vovó Donana</option>
+			<option value='Guiomar'>".$nursery."Vovó Guiomar</option>
+			<option value='Iracema'>".$nursery."Vovó Iracema</option>
+			<option value='Jardim'>".$nursery."Jardim das Oliveiras</option>
+			<option value='Luiza'>".$nursery."Vovó Luiza</option>
+			<option value='Madre' selected>".$nursery."Madre Carmen Sallés</option>
+			<option value='Paulina'>".$nursery."Vovó Paulina</option>";
+			break;
+		case 'Paulina':
+			return "<option> </option>
+			<option value='CEMEAI' selected>CEMEAI</option>
+			<option value='Donana'>".$nursery."Vovó Donana</option>
+			<option value='Guiomar'>".$nursery."Vovó Guiomar</option>
+			<option value='Iracema'>".$nursery."Vovó Iracema</option>
+			<option value='Jardim'>".$nursery."Jardim das Oliveiras</option>
+			<option value='Luiza'>".$nursery."Vovó Luiza</option>
+			<option value='Madre'>".$nursery."Madre Carmen Sallés</option>
+			<option value='Paulina' selected>".$nursery."Vovó Paulina</option>";
+			break;
+		default:
+			return "<option selected> </option>
+			<option value='CEMEAI' selected>CEMEAI</option>
+			<option value='Donana'>".$nursery."Vovó Donana</option>
+			<option value='Guiomar'>".$nursery."Vovó Guiomar</option>
+			<option value='Iracema'>".$nursery."Vovó Iracema</option>
+			<option value='Jardim'>".$nursery."Jardim das Oliveiras</option>
+			<option value='Luiza'>".$nursery."Vovó Luiza</option>
+			<option value='Madre'>".$nursery."Madre Carmen Sallés</option>
+			<option value='Paulina'>".$nursery."Vovó Paulina</option>";
+			break;
+	}
+}
+
+function checkSituation($situation){
+	switch ($situation) {
+		case 'conf':
+			return "<option> </option>
+			<option value='Confirmado' selected>Confirmado</option>
+			<option value='Desistente'>Desistente</option>";
+			break;
+		case 'desist':
+			return "<option> </option>
+			<option value='Confirmado'>Confirmado</option>
+			<option value='Desistente' selected>Desistente</option>";
+			break;
+		default:
+			return "<option selected> </option>
+			<option value='Confirmado'>Confirmado</option>
+			<option value='Desistente'>Desistente</option>";
+			break;
+	}
+}
+
 $error = "Erro";
 $success = "Sucesso";
 

@@ -12,11 +12,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-
     <!-- Datatables  CSS-->
     <link rel="stylesheet" type="text/css" href="../assets/css/dataTables.bootstrap4.css"/>
+    
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   
   <body>
