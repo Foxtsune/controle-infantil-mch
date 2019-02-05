@@ -1,6 +1,6 @@
 <?php 
 require_once '../assets/helpers.php';
-require_once '../controller/login_controller.php';
+require_once '../controller/login.php';
 ?>
 <!doctype html>
 <html lang="pt-br">

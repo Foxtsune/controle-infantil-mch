@@ -23,6 +23,15 @@ function getUserById($id){
 	return $user;
 }
 
+function getAllUsers(){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("SELECT * FROM `users`");
+	$statement->bindParam(':id', $id);
+	$statement->execute();
+	$users = $statement->fetchAll(PDO::FETCH_OBJ);
+	return $users;
+}
+
 function updateUser($id,$name,$email,$admin){
 	$conn = dbConnetion();
 	$statement = $conn->prepare("UPDATE `users` SET name=:name, email=:email, admin=:admin WHERE id=:id");

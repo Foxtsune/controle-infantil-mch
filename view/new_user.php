@@ -12,27 +12,32 @@ validateSession();
 	<div class="container">
         <div id="page-content-wrapper">
             <section class="container-fluid text-center">
-                <h1 class="mb-5">Atualizar Dados</h1>
-                <form action="../controller/edit_user.php" method="post">
+                <h1 class="mb-5">Inserir Novo Usuário</h1>
+                <form action="../controller/new_user.php" method="post">
 	                <div class="row my-md-3 my-sm-5">
-	                    <div class="col-md-5 col-sm-12">
+	                    <div class="col-md-4 col-sm-12">
 	                    	<div class="input-group my-2">
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-name">Nome</span>
 							  </div>
-							  <input type="text" required class="form-control" id="name" name="name" aria-describedby="basic-addon-name" value="<?php echo $user->name ?>">
+							  <input type="text" required class="form-control" id="name" name="name" aria-describedby="basic-addon-name">
 							</div>
 	                    </div>
-	                    <div class="col-md-5 col-sm-12">
+	                    <div class="col-md-4 col-sm-12">
 	                    	<div class="input-group my-2">
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-email">Email</span>
 							  </div>
-							  <input type="email" required class="form-control" id="email" name="email" email="email" aria-describedby="basic-addon-email" value="<?php echo $user->email ?>">
+							  <input type="email" required class="form-control" id="email" name="email" aria-describedby="basic-addon-email">
 							</div>                      
 	                    </div>
-	                    <div class="col-auto">
-	                    	<a href="#" data-href="delete_candidate.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete" class="btn btn-secondary my-2">Senha</a>
+	                    <div class="col-md-4 col-sm-12">
+	                    	<div class="input-group my-2">
+							  <div class="input-group-prepend">
+							    <span class="input-group-text" id="basic-addon-password">Senha</span>
+							  </div>
+							  <input type="password" required class="form-control" id="password" name="password" aria-describedby="basic-addon-password">
+							</div>   
 	                    </div>
 					</div>
 
@@ -41,12 +46,12 @@ validateSession();
 					
 					<div class="row mt-md-5 justify-content-md-around">
 	                    <div class="form-group col-md-6 col-sm-6">
-	                       <label class="sr-only" for="edit">Editar</label>
-	                       <button type="submit" class="btn btn-outline-success btn-block" id="edit" name="edit">Editar</button>
+	                       <label class="sr-only" for="new">Inserir</label>
+	                       <button type="submit" class="btn btn-outline-success btn-block" id="new" name="new">Inserir</button>
 	                    </div>
 	                    <div class="form-group col-md-6 col-sm-6">
 	                       <label class="sr-only" for="cancel">Cancelar</label>
-	                       <a href="index.php" class="btn btn-outline-secondary btn-block" id="cancel" name="cancel">Cancelar</a>
+	                       <a href="users.php" class="btn btn-outline-secondary btn-block" id="cancel" name="cancel">Cancelar</a>
 	                    </div>
 	                </div>
                 </form>

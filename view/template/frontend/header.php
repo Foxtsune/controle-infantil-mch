@@ -39,13 +39,8 @@
               <a class="nav-link" href="new_candidate.php">Inserir</a>
             </li>
             <li class="position-relative">
-              <a class="nav-link" href="#">Exportar</a>
+              <a class="nav-link" href="#">Categorias</a>
             </li>
-            <?php if ($_SESSION['admin']==1): ?>
-              <li class="position-relative">
-                <a class="nav-link" href="#">Usuários</a>
-              </li>
-            <?php endif ?>
           </ul>
           <ul class="navbar-nav">
             
@@ -53,6 +48,9 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']?></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="edit_user.php">Meus dados</a>
+                <?php if ($_SESSION['admin']==1): ?>
+                <a class="dropdown-item" href="users.php">Usuários</a>
+                <?php endif ?>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../controller/logoff.php">Sair</a>
               </div>

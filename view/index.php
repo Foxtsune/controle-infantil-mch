@@ -70,7 +70,7 @@ require_once abspath().'/view/template/frontend/footer.php';
 require_once abspath().'/view/template/frontend/delete_modal.php';
 ?>
 <script type="text/javascript">
-    datatableApply(); 
+    datatableApplyIndex(); 
     $('.dropdown-toggle').dropdown()
 </script>
 <?php if (isset($_SESSION['data']))triggerModal() ?>

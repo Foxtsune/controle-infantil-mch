@@ -44,6 +44,8 @@ if (isset($_POST['psw'])) {
 	}
 }
 
+
+
 if (isset($_POST['edit'])) {
 
 	$id = $_POST['id'];
@@ -55,6 +57,10 @@ if (isset($_POST['edit'])) {
 		$admin = 0;
 	} else {
 		$admin = $_POST['admin'];
+	}
+
+	if ($id == 1) { //First user always be the adm
+		$admin = 1;
 	}
 
 	try {
