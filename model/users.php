@@ -32,6 +32,13 @@ function getAllUsers(){
 	return $users;
 }
 
+function insertUser($name,$email,$password){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("INSERT INTO `users` (name,email,password) VALUES(:name,:email,:password)");
+	$statement->execute(array(":name" => $name, "email" => $email,":password" => $password));
+	return $statement->rowCount();
+}
+
 function updateUser($id,$name,$email,$admin){
 	$conn = dbConnetion();
 	$statement = $conn->prepare("UPDATE `users` SET name=:name, email=:email, admin=:admin WHERE id=:id");

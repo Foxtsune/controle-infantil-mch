@@ -30,7 +30,7 @@ validateSession();
                 <tbody>
                     <?php foreach ($rows as $row => $column): if ($column->admin == 1) continue;?>
                     <tr>
-                        <td scope="row" class="text-center"><a href="edit_candidate.php?id=<?php echo $column->id ?>"><img src="../assets/img/edit.png" width="30" height="30"></a></td>
+                        <td scope="row" class="text-center"><a href="edit_users.php?id=<?php echo $column->id ?>"><img src="../assets/img/edit.png" width="30" height="30"></a></td>
                         <td scope="row" class="text-center"><?php echo $column->name ?></td>
                         <td scope="row" class="text-center"><?php echo $column->email ?></td>
                         <td scope="row" class="text-center">
