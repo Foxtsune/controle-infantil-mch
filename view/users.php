@@ -34,7 +34,7 @@ validateSession();
                         <td scope="row" class="text-center"><?php echo $column->name ?></td>
                         <td scope="row" class="text-center"><?php echo $column->email ?></td>
                         <td scope="row" class="text-center">
-                            <a href="#" data-href="delete_candidate.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete"><img src="../assets/img/delete.png" width="30" height="30"></a>
+                            <a href="#" data-href="../controller/delete_user.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete"><img src="../assets/img/delete.png" width="30" height="30"></a>
                         </td>
                     </tr>
                     <?php endforeach ?>
@@ -48,7 +48,7 @@ validateSession();
 
 <?php
 require_once abspath().'/view/template/frontend/footer.php';
-require_once abspath().'/view/template/frontend/delete_modal.php';
+require_once abspath().'/view/template/frontend/delete_user_modal.php';
 ?>
 <script type="text/javascript">
     datatableApplyUsers(); 

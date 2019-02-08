@@ -52,3 +52,11 @@ function updatePassword($id,$password){
 	$statement->execute(array(":password"=>$password,":id"=>$id));
 	return $statement->rowCount();
 }
+
+function deleteUser($id){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("DELETE FROM `users` WHERE id=:id");
+	$statement->bindParam(':id', $id);
+	$statement->execute();
+	return $statement->rowCount();
+}

@@ -15,7 +15,7 @@ validateSession();
                 <h1 class="mb-5">Atualizar Dados</h1>
                 <form action="../controller/edit_users.php" method="post">
 	                <div class="row my-md-3 my-sm-5">
-	                    <div class="col-md-5 col-sm-12">
+	                    <div class="col-md-6 col-sm-12">
 	                    	<div class="input-group my-2">
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-name">Nome</span>
@@ -23,16 +23,13 @@ validateSession();
 							  <input type="text" required class="form-control" id="name" name="name" aria-describedby="basic-addon-name" value="<?php echo $user->name ?>">
 							</div>
 	                    </div>
-	                    <div class="col-md-5 col-sm-12">
+	                    <div class="col-md-6 col-sm-12">
 	                    	<div class="input-group my-2">
 							  <div class="input-group-prepend">
 							    <span class="input-group-text" id="basic-addon-email">Email</span>
 							  </div>
 							  <input type="email" required class="form-control" id="email" name="email" email="email" aria-describedby="basic-addon-email" value="<?php echo $user->email ?>">
 							</div>                      
-	                    </div>
-	                    <div class="col-auto">
-	                    	<a href="#" data-href="delete_candidate.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete" class="btn btn-secondary my-2">Senha</a>
 	                    </div>
 					</div>
 

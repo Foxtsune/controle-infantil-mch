@@ -14,7 +14,7 @@ if (isset($_POST['insert'])) {
 		header('location: '. myURL(). 'view/new_user.php');
 		exit;
 
-	}else{
+	}else {
 
 		$name = $_POST['name'];
 		$email = $_POST['email'];

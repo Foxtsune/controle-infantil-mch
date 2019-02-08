@@ -67,7 +67,7 @@ validateSession();
 
 <?php
 require_once abspath().'/view/template/frontend/footer.php';
-require_once abspath().'/view/template/frontend/delete_modal.php';
+require_once abspath().'/view/template/frontend/delete_candidate_modal.php';
 ?>
 <script type="text/javascript">
     datatableApplyIndex(); 

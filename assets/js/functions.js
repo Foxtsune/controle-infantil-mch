@@ -51,7 +51,7 @@ function datatableApplyIndex() {
 };
 
 function datatableApplyUsers() {
-            $('#table_id').DataTable({
+        $('#table_id').DataTable({
             /*TRADUÇÕES*/
             "language": {
                 "sEmptyTable": "Nenhum registro encontrado",
@@ -75,7 +75,18 @@ function datatableApplyUsers() {
                     "sSortAscending": ": Ordenar colunas de forma ascendente",
                     "sSortDescending": ": Ordenar colunas de forma descendente"
                 }
-            }
+            },/*SCROLLING*/
+                "scrollY":        "400px",
+                "scrollX":        "1000px",
+                "scrollCollapse": true,
+                "paging":         true,
+                "columnDefs": [
+                    { "width": "auto", targets: 0 },//img-edit
+                    { "width": "500px", targets: 1 },//nome
+                    { "width": "500px", targets: 2 },//email
+                    { "width": "auto", targets: 3 }//img-apagar
+                ],
+                "fixedColumns": true
         });
 };
 

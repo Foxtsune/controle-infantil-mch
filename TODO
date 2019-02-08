@@ -8,10 +8,16 @@ TODO:
 Use contextual classes to color table rows or individual cells
 Para Conf. Desist. Warn.}
 
-{Primeiro realizar os logins criando a tabela usuários}V
+{Primeiro realizar os logins criando a tabela usuários} V
 
 !!!!{Deletar candidato continuar} V
 
 {Corrigir dropdown hover do cabeçalho} V
 
-{Responsividade no edit_user Corrigir}
+{Responsividade no edit_user Corrigir} V
+
+{Imprimir uma ficha com os dados o candidato} 
+
+{Deletar usuário} V
+
+{Corrigir a tabela users.php, que fica grande em telas pequenas(não responsivel)}

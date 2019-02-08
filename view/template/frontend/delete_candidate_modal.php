@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body text-center">
-                <h4>Deseja realmente excluir?</h4>
+                <h4>Deseja realmente excluir o candidato?</h4>
             </div>
             <div class="modal-footer">
                 <a class="btn btn-danger btn-ok" href="../controller/delete_candidate.php?id=<?php echo $column->id ?>" autofocus>Apagar</a>
