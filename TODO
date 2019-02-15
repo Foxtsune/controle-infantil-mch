@@ -4,13 +4,11 @@ TODO:
 
 {Consertar responsividade do cabeçalho} V
 
-{Contextual classes
-Use contextual classes to color table rows or individual cells
-Para Conf. Desist. Warn.}
+{Contextual classes Use contextual classes to color table rows or individual cells. Para Conf. Desist. Warn.}
 
 {Primeiro realizar os logins criando a tabela usuários} V
 
-!!!!{Deletar candidato continuar} V
+{Deletar candidato continuar} V
 
 {Corrigir dropdown hover do cabeçalho} V
 
@@ -21,3 +19,9 @@ Para Conf. Desist. Warn.}
 {Deletar usuário} V
 
 {Corrigir a tabela users.php, que fica grande em telas pequenas(não responsivel)}
+
+{Tratar os IDs enviados via GET}
+
+{Criar Controller das Categorias}
+
+{Continuar com a date diff}

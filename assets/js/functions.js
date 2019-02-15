@@ -24,29 +24,7 @@ function datatableApplyIndex() {
     		        "sSortAscending": ": Ordenar colunas de forma ascendente",
     		        "sSortDescending": ": Ordenar colunas de forma descendente"
     		    }
-    		},/*SCROLLING*/
-    		"scrollY":        "400px",
-    		"scrollX":        "1000px",
-            "scrollCollapse": true,
-            "paging":         true,
-            "columnDefs": [
-                { "width": "auto", targets: 0 },//img-edit
-                { "width": "230px", targets: 1 },//nome
-                { "width": "auto", targets: 2 },//dtCad
-                { "width": "auto", targets: 3 },//dtNasc
-                { "width": "230px", targets: 4 },//Pai
-                { "width": "230px", targets: 5 },//Mae
-                { "width": "230px", targets: 6 },//Logradouro
-                { "width": "auto", targets: 7 },//numero
-                { "width": "230px", targets: 8 },//Bairro
-                { "width": "100px", targets: 9 },//Telefone
-                { "width": "100px", targets: 10 },//Telefone
-                { "width": "auto", targets: 11 },//Contato
-                { "width": "auto", targets: 12 },//Zoneamento
-                { "width": "auto", targets: 13 },//Situacao
-                { "width": "auto", targets: 14 }//img-delete
-            ],
-            "fixedColumns": true
+    		}
         });
 };
 

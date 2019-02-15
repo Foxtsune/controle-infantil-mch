@@ -4,16 +4,46 @@
 
 require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";
 
-require_once abspath().'/controller/manage_candidate.php';
+require_once abspath().'/controller/categories.php';
 require_once abspath().'/view/template/frontend/header.php';
-$rows = loadAllCandidates();
+$rows = getCategories();
 validateSession();
 ?>
 
 <!-- Page Content -->
     <div id="page-content-wrapper" style="width: 100%">
-        <section class="container-fluid">
-            <p><h3><u>Bem vindo <?php echo $_SESSION['name'] ?></u></h3></p><br>
+        <section class="container-fluid text-center">
+            <h1 class="mb-5">Infantil</h1>
+            <form action="../controller/categories.php" method="get">
+                <div class="row my-md-3 my-sm-5 justify-content-around">
+                    <div class="col-md-3 col-sm-12">
+                        <div class="input-group my-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon-I">Infantil</span>
+                            </div>
+                            <select class="custom-select" required id="inf" name="inf" aria-describedby="basic-addon-inf">
+                                <option value='I' selected>1</option>
+                                <option value='II'>2</option>
+                                <option value='III'>3</option>
+                                <option value='IV'>4</option>
+                                <option value='V'>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="input-group my-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon-date">Data de Corte</span>
+                            </div>
+                            <input type="date" required class="form-control" id="date" name="date" aria-describedby="basic-addon-date">
+                        </div>                      
+                    </div>
+                    <div class="form-group col-md-3 col-sm-6">
+                       <label class="sr-only" for="search">Buscar</label>
+                       <button type="submit" class="btn btn-outline-success btn-block" id="search" name="search">Enviar</button>
+                    </div>
+                </div>
+            </form>
             <table id="table_id" class="display table table-bordered table-hover">
                 <thead>
                     <!-- 15306 default column size javascrip file  -->

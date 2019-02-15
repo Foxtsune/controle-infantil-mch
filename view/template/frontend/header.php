@@ -39,14 +39,13 @@
               <a class="nav-link" href="new_candidate.php">Inserir</a>
             </li>
             <li class="position-relative">
-              <a class="nav-link" href="#">Categorias</a>
+              <a class="nav-link" href="categories.php">Categorias</a>
             </li>
           </ul>
           <ul class="navbar-nav">
-            
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']?></a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['name']?></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkUser">
                 <a class="dropdown-item" href="edit_user.php">Meus dados</a>
                 <?php if ($_SESSION['admin']==1): ?>
                 <a class="dropdown-item" href="users.php">Usuários</a>

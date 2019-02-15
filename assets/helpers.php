@@ -134,3 +134,18 @@ function triggerModal(){
     // unset($_SESSION['data']['type']);
     unset($_SESSION['data']);
 }
+
+//Difference between two dates %a=days
+function dateDifference($date_1, $date_2, $differenceFormat = '%a'){
+
+    $datetime1 = date_create($date_1, timezone_open('America/Sao_Paulo'));
+    $datetime2 = date_create($date_2, timezone_open('America/Sao_Paulo'));
+    
+    $interval = date_diff($datetime1, $datetime2);
+
+    if ($interval->format($differenceFormat) == 0) {// checks if is lower than a year
+        $differenceFormat = '%m Meses';
+    }
+    
+    return $interval->format($differenceFormat);  
+}

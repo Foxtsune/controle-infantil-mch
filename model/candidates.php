@@ -53,3 +53,13 @@ function deleteCandidate($id){
 	$statement->execute();
 	return $statement->rowCount();
 }
+
+function getCategory($firstDate,$secondDate){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("SELECT * FROM `candidates` WHERE birth BETWEEN '$firstDate' AND '$secondDate'");
+	$statement->execute();
+	$candidates = $statement->fetchAll(PDO::FETCH_OBJ);
+	return $candidates;
+}
+
+//SELECT * FROM `candidates` WHERE birth BETWEEN '2018-01-01' AND '2018-12-31'

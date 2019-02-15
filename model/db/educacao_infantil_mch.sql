@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Fev-2019 às 19:01
+-- Generation Time: 13-Fev-2019 às 16:56
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.1
 
@@ -45,6 +45,14 @@ CREATE TABLE `candidates` (
   `situation` varchar(255) DEFAULT ' '
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `candidates`
+--
+
+INSERT INTO `candidates` (`id`, `name`, `birth`, `inscription`, `mother`, `father`, `street`, `number`, `neighborhood`, `telephone`, `telephone2`, `contact`, `destination`, `situation`) VALUES
+(23, 'Aluno1', '2012-03-12', '2019-02-01', 'Leticia Oliveira', 'Ricardo Pereira', 'R. dos Ipês', 23, 'Santo Antônio', 23345674253, 3424235, 'tel', 'CEMEAI', 'Confirmado'),
+(24, 'Júlio dos Santos Pelúcio oooooooooooooooooooooooooooo', '1996-02-27', '2019-01-30', 'Francisca Isabel dos Santos', 'Bartolomeu Pereira Pelúcio', 'Olímpio Pereira', 288, 'Centro', 12324564432, 534324533, '', 'CEMEAI', '');
+
 -- --------------------------------------------------------
 
 --
@@ -64,7 +72,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `admin`) VALUES
-(1, 'Administrador', 'admin@gmail.com', '202cb962ac59075b964b07152d234b70', 1);
+(1, 'Administrador', 'admin@gmail.com', '202cb962ac59075b964b07152d234b70', 1),
+(4, 'Carina', 'carina@gmail.com', '202cb962ac59075b964b07152d234b70', 0);
 
 --
 -- Indexes for dumped tables
@@ -90,13 +99,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `candidates`
 --
 ALTER TABLE `candidates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
