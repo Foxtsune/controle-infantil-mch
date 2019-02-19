@@ -6,6 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";
 
 require_once abspath().'/controller/manage_users.php';
 require_once abspath().'/view/template/frontend/header.php';
+isAdmin();
 $rows = loadAllUsers();
 validateSession();
 ?>

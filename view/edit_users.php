@@ -3,6 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";
 
 require_once abspath().'/controller/edit_users.php';
 require_once abspath().'/view/template/frontend/header.php';
+isAdmin();
 $user = loadUserUpdate($_GET['id']);
 validateSession();
 ?>

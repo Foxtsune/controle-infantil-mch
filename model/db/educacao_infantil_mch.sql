@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Fev-2019 às 16:56
+-- Generation Time: 19-Fev-2019 às 18:52
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.1
 
@@ -51,7 +51,14 @@ CREATE TABLE `candidates` (
 
 INSERT INTO `candidates` (`id`, `name`, `birth`, `inscription`, `mother`, `father`, `street`, `number`, `neighborhood`, `telephone`, `telephone2`, `contact`, `destination`, `situation`) VALUES
 (23, 'Aluno1', '2012-03-12', '2019-02-01', 'Leticia Oliveira', 'Ricardo Pereira', 'R. dos Ipês', 23, 'Santo Antônio', 23345674253, 3424235, 'tel', 'CEMEAI', 'Confirmado'),
-(24, 'Júlio dos Santos Pelúcio oooooooooooooooooooooooooooo', '1996-02-27', '2019-01-30', 'Francisca Isabel dos Santos', 'Bartolomeu Pereira Pelúcio', 'Olímpio Pereira', 288, 'Centro', 12324564432, 534324533, '', 'CEMEAI', '');
+(24, 'Júlio dos Santos Pelúcio oooooooooooooooooooooooooooo', '1996-02-27', '2019-01-30', 'Francisca Isabel dos Santos', 'Bartolomeu Pereira Pelúcio', 'Olímpio Pereira', 288, 'Centro', 12324564432, 534324533, '', 'CEMEAI', ''),
+(25, 'Pietro Candido', '2018-07-10', '2019-02-11', 'Marta Machado', 'Donizeti Ferreira', 'ABC', 10, 'Jardim', 345334453, 321324445, ' ', ' ', ' '),
+(26, 'Maria Luiza Ferreira dos Santos', '2017-05-23', '2018-11-13', 'Gloria das Dores', 'José Aldo Ferreira', 'Flores', 33, 'Novo Milênio', 232432143, 321343242, ' ', ' ', ' '),
+(27, 'Pietro Candido', '2018-07-10', '2019-02-11', 'Marta Machado', 'Donizeti Ferreira', 'ABC', 10, 'Jardim', 345334453, 321324445, ' ', ' ', ' '),
+(28, 'Maria Luiza Ferreira dos Santos', '2017-05-23', '2018-11-13', 'Gloria das Dores', 'José Aldo Ferreira', 'Flores', 33, 'Novo Milênio', 232432143, 321343242, ' ', ' ', ' '),
+(29, 'Pietro Candido', '2018-07-10', '2019-02-11', 'Marta Machado', 'Donizeti Ferreira', 'ABC', 10, 'Jardim', 345334453, 321324445, ' ', ' ', ' '),
+(30, 'Maria Luiza Ferreira dos Santos', '2017-05-23', '2018-11-13', 'Gloria das Dores', 'José Aldo Ferreira', 'Flores', 33, 'Novo Milênio', 232432143, 321343242, ' ', ' ', ' '),
+(32, 'Maria Luiza Ferreira dos Santos', '2017-05-23', '2018-11-13', 'Gloria das Dores', 'José Aldo Ferreira', 'Flores', 33, 'Novo Milênio', 232432143, 321343242, ' ', ' ', ' ');
 
 -- --------------------------------------------------------
 
@@ -99,7 +106,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `candidates`
 --
 ALTER TABLE `candidates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `users`
