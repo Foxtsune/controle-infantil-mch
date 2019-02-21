@@ -28,16 +28,22 @@ function getCategories($inf = '',$end_date = ''){
 			return getInterval("-5 year",$end_date);
 			break;
 		default:
-			return getInterval("-1 year",date("Y-m-d"));
+			return getInterval("-1 year",date("Y")."-03-31");
 			break;
 	}
 }
 
 
 // Returns interval between years of candidate
-function getInterval(String $anos,$end_date){
-	$date = strtotime($anos);
-	$date = date("Y",$date);
-	$start_date = date("Y-m-d",strtotime("31 march $date"));
+function getInterval(String $years,$end_date){
+	$parsed_date = strtotime($end_date);//Convert end_data to a timestamp
+	$parsed_date = strtotime($years,$parsed_date);//Subtract number of years of end_date timestamp
+	$start_date = date("Y-m-d",$parsed_date);//Convert start_date
+	$end_date = strtotime("+1 year",strtotime($start_date));// Add one year to the start_date
+	$end_date = date("Y-m-d",$end_date);// Add one year to the start_date
+	echo $years."<br>";
+	echo $start_date."<br>";
+	echo $end_date."<br>";
+	
 	return getCategory($start_date, $end_date);
 }

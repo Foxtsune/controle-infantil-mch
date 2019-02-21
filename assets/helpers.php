@@ -39,7 +39,7 @@ function test_input($data) {
   return $data;
 }
 
-/*Transform a number to DB insertion*/
+/*Transform a number to insert on DB*/
 function numberTransform($string) {
    $string = str_replace('-', '', $string); // Replaces all hyphens.
 
@@ -136,7 +136,7 @@ function triggerModal(){
 }
 
 //Difference between two dates %a=days
-function dateDifference($date_1, $date_2, $differenceFormat = '%a'){
+function dateDifference($date_1, $date_2, $differenceFormat = '%y'){
 
     $datetime1 = date_create($date_1, timezone_open('America/Sao_Paulo'));
     $datetime2 = date_create($date_2, timezone_open('America/Sao_Paulo'));

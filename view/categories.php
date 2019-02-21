@@ -13,8 +13,8 @@ validateSession();
 <!-- Page Content -->
     <div id="page-content-wrapper" style="width: 100%">
         <section class="container-fluid text-center">
-            <h1 class="mb-5">Infantil</h1>
-            <form action="../controller/categories.php" method="get">
+            <h1 class="mb-5">Infantil <?php if(isset($_GET[''])) ?></h1>
+            <form action="../view/categories.php" method="get">
                 <div class="row my-md-3 my-sm-5 justify-content-around">
                     <div class="col-md-3 col-sm-12">
                         <div class="input-group my-2">
@@ -62,7 +62,7 @@ validateSession();
                     <?php foreach ($rows as $row => $column): ?>
                     <tr>
                         <td scope="row" class="text-center"><a href="edit_candidate.php?id=<?php echo $column->id ?>"><img src="../assets/img/edit.png" width="30" height="30"></a></td>
-                        <td scope="row" class="text-center"><?php echo dateDifference(date("Y")."-02-31", $column->birth,'%y') ?></td>
+                        <td scope="row" class="text-center"><?php echo dateDifference(date("Y")."-02-31", $column->birth) ?></td>
                         <td scope="row" class="text-center"><?php echo $column->name ?></td>
                         <td scope="row" class="text-center"><?php echo stringToDate($column->inscription) ?></td>
                         <td scope="row" class="text-center"><?php echo stringToDate($column->birth) ?></td>
