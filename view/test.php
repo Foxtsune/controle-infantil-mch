@@ -24,10 +24,12 @@ include abspath().'/model/candidates.php';
   header("Content-Disposition: attachment; filename=\"$filename\"");
   header("Content-Type: text/csv; charset=UTF-16LE");
 
+   $data = ["nome","nascimento","inscrição","mãe","pai","logradouro","numero","bairro","telefone1","telefone2","contato","destino","situação"];
+
   $out = fopen("php://output", 'w');
 
   $flag = false;
-  $result = CSVData();
+  $result = getCategory($firstDate='',$secondDate='');
 
   while ($row = array_shift($result)) {
   	if(!$flag) {
@@ -41,13 +43,4 @@ include abspath().'/model/candidates.php';
 
   fclose($out);
   exit;
-
-
-  /*$result = getAllCandidates();
-
-  while ($row = array_pop($result)) {
-  	echo "<pre>";
-  	print_r($row);
-  	echo "</pre>";
-  }*/
 ?>

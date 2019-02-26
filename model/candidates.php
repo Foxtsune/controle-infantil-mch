@@ -12,15 +12,6 @@ function getAllCandidates(){
 	return $candidates;
 }
 
-function CSVData(){
-	$conn = dbConnetion();
-	// http://php.net/manual/pt_BR/pdo.prepare.php
-	$statement = $conn->prepare("SELECT * FROM `candidates`");
-	$statement->execute();
-	$candidates = $statement->fetchAll(PDO::FETCH_ASSOC);
-	return $candidates;
-}
-
 /*Get cadidate by Id*/
 function getCandidateById($id){
 	$conn = dbConnetion();
@@ -67,7 +58,7 @@ function getCategory($firstDate,$secondDate){
 	$conn = dbConnetion();
 	$statement = $conn->prepare("SELECT * FROM `candidates` WHERE birth BETWEEN '$firstDate' AND '$secondDate'");
 	$statement->execute();
-	$candidates = $statement->fetchAll(PDO::FETCH_ASSOC);
+	$candidates = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $candidates;
 }
 
