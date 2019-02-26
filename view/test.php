@@ -1,36 +1,53 @@
 <?php
 
+session_start();
+require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";// precisa incluir por que está sendo enviado através de um formulario
+include abspath().'/model/candidates.php';
 
-function dateDifference($date_1, $date_2, $differenceFormat = '%a'){
+  // Original PHP code by Chirp Internet: www.chirp.com.au
+  // Please acknowledge use of this code by including this header.
 
-    $datetime1 = date_create($date_1, timezone_open('America/Sao_Paulo'));
-    $datetime2 = date_create($date_2, timezone_open('America/Sao_Paulo'));
-    
-    $interval = date_diff($datetime1, $datetime2);
-    
-    return $interval->format($differenceFormat);
-}
+ function cleanData(&$str)
+  {
+    if($str == 't') $str = 'TRUE';
+    if($str == 'f') $str = 'FALSE';
+    if(preg_match("/^0/", $str) || preg_match("/^\+?\d{8,}$/", $str) || preg_match("/^\d{4}.\d{1,2}.\d{1,2}/", $str)) {
+      $str = "'$str'";
+    }
+    if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
+    $str = mb_convert_encoding($str, 'UTF-16LE', 'UTF-8');
+  }
 
-$datetime1 = date_create(date("Y"), timezone_open('America/Sao_Paulo'));
-$datetime2 = date_create("2015-04-12", timezone_open('America/Sao_Paulo'));
-    
-$interval = date_diff($datetime1, $datetime2);
+  // filename for download
+  $filename = "controle_infantil_" . date('Ymd') . ".csv";
+
+  header("Content-Disposition: attachment; filename=\"$filename\"");
+  header("Content-Type: text/csv; charset=UTF-16LE");
+
+  $out = fopen("php://output", 'w');
+
+  $flag = false;
+  $result = CSVData();
+
+  while ($row = array_shift($result)) {
+  	if(!$flag) {
+      // display field/column names as first row
+      fputcsv($out, array_keys($row), ',', '"');
+      $flag = true;
+    }
+    array_walk($row, __NAMESPACE__ . '\cleanData');
+    fputcsv($out, array_values($row), ',', '"');
+  }
+
+  fclose($out);
+  exit;
 
 
-echo dateDifference(date("Y"),"2015-04-12","%y %m Meses");
-echo "<br><br>";
+  /*$result = getAllCandidates();
 
-
-print_r($datetime1);
-echo "<br><br>";
-print_r($datetime2);
-echo "<br><br><pre>";
-print_r($interval);
-echo "</pre><br><br>";
-echo $interval->format('%y');
-echo "</pre><br><br>";
-
-$date = strtotime("-5 year");
-$date = date("Y",$date);
-$date = date("Y-m-d",strtotime("31 march $date"));
-echo $date;
+  while ($row = array_pop($result)) {
+  	echo "<pre>";
+  	print_r($row);
+  	echo "</pre>";
+  }*/
+?>

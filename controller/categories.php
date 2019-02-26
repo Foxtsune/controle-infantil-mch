@@ -5,45 +5,27 @@ include abspath().'/model/candidates.php';
 
 
 
-function getCategories($inf = '',$end_date = ''){
+function getCategories(){
+	$age = "-6 year";
 	if (isset($_GET['search'])) {
 		$end_date = $_GET['date'];
 		$inf = $_GET['inf'];
-	}
-
-	switch ($inf) {
-		case 'I':
-			return getInterval("-1 year",$end_date);
-			break;
-		case 'II':
-			return getInterval("-2 year",$end_date);
-			break;
-		case 'III':
-			return getInterval("-3 year",$end_date);
-			break;
-		case 'IV':
-			return getInterval("-4 year",$end_date);
-			break;
-		case 'V':
-			return getInterval("-5 year",$end_date);
-			break;
-		default:
-			return getInterval("-1 year",date("Y")."-03-31");
-			break;
+		return getInterval($age,$end_date);
+	}else{
+		$end_date = date("Y")."-03-31";
+		return getInterval($age,$end_date);
 	}
 }
 
 
 // Returns interval between years of candidate
 function getInterval(String $years,$end_date){
-	$parsed_date = strtotime($end_date);//Convert end_data to a timestamp
-	$parsed_date = strtotime($years,$parsed_date);//Subtract number of years of end_date timestamp
-	$start_date = date("Y-m-d",$parsed_date);//Convert start_date
-	$end_date = strtotime("+1 year",strtotime($start_date));// Add one year to the start_date
-	$end_date = date("Y-m-d",$end_date);// Add one year to the start_date
-	echo $years."<br>";
-	echo $start_date."<br>";
-	echo $end_date."<br>";
+	$parsed_date = strtotime($end_date);
+	$start_date = strtotime($years,$parsed_date);
+	$start_date = date("Y-m-d",$start_date);
+	$result = getCategory($start_date, $end_date);
+
 	
-	return getCategory($start_date, $end_date);
+
+	return 0;
 }
