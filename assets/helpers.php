@@ -10,7 +10,6 @@ function myURL(){
 	return 'http://localhost/Controle-Infantil/';
 }
 
-
 /*Checks if the session OK*/
 function validateSession(){
 	if (!isset($_SESSION['id']) || !isset($_SESSION['name']) /*|| $_SESSION['last_activity'] < time() SESSEION TIMOUT*/) {
@@ -29,7 +28,6 @@ function isAdmin(){
         exit;
 	}
 }
-
 
 /*Clear all spaces and standardize a string*/
 function test_input($data) {

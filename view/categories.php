@@ -13,7 +13,7 @@ validateSession();
 <!-- Page Content -->
     <div id="page-content-wrapper" style="width: 100%">
         <section class="container-fluid text-center">
-            <h1 class="mb-5">Infantil <?php if(isset($_GET[''])) ?></h1>
+            <h1 class="mb-5">Infantil <?php if(isset($_GET['inf']))echo $_GET['inf']?></h1>
             <form action="../view/categories.php" method="get">
                 <div class="row my-md-3 my-sm-5 justify-content-around">
                     <div class="col-md-3 col-sm-12">
@@ -22,11 +22,7 @@ validateSession();
                                 <span class="input-group-text" id="basic-addon-I">Infantil</span>
                             </div>
                             <select class="custom-select" required id="inf" name="inf" aria-describedby="basic-addon-inf">
-                                <option value='I' selected>1</option>
-                                <option value='II'>2</option>
-                                <option value='III'>3</option>
-                                <option value='IV'>4</option>
-                                <option value='V'>5</option>
+                                <?php  showSelectInf();?>
                             </select>
                         </div>
                     </div>

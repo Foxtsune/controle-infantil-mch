@@ -50,6 +50,7 @@
                 <?php if ($_SESSION['admin']==1): ?>
                 <a class="dropdown-item" href="users.php">Usuários</a>
                 <?php endif ?>
+                <a class="dropdown-item" href="../view/export.php">Exportar</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../controller/logoff.php">Sair</a>
               </div>

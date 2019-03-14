@@ -24,17 +24,17 @@ include abspath().'/model/candidates.php';
   header("Content-Disposition: attachment; filename=\"$filename\"");
   header("Content-Type: text/csv; charset=UTF-16LE");
 
-   $data = ["nome","nascimento","inscrição","mãe","pai","logradouro","numero","bairro","telefone1","telefone2","contato","destino","situação"];
+   $data = ["id","nome","nascimento","inscrição","mãe","pai","logradouro","numero","bairro","telefone1","telefone2","contato","destino","situação"];
 
   $out = fopen("php://output", 'w');
 
   $flag = false;
-  $result = getCategory($firstDate='',$secondDate='');
+  $result = CSVData($_GET['date']);
 
   while ($row = array_shift($result)) {
   	if(!$flag) {
       // display field/column names as first row
-      fputcsv($out, array_keys($row), ',', '"');
+      fputcsv($out, array_values($data), ',', '"');
       $flag = true;
     }
     array_walk($row, __NAMESPACE__ . '\cleanData');

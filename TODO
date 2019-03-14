@@ -22,10 +22,14 @@ TODO:
 
 {Tratar os IDs enviados via GET}
 
-{Criar Controller das Categorias}
+{Criar Controller das Categorias} V
 
-{Continuar com a date diff}
+{Continuar com a date diff} V
 
-{Exibir a quantidade de vagas remanecentes}
+{Exibir a quantidade de vagas remanecentes} 
 
-{Contar quantidades de alunos atualmente}
+{Contar quantidades de alunos atualmente} (datatable ja faz) V
+
+{Exportar como CSV os nascidos no ano ?}
+
+{Levar em consideração as crianças que tem 0 anos nas categorias de infantil}

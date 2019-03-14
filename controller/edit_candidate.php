@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT']."/Controle-Infantil/assets/helpers.php";/
 include abspath().'/model/candidates.php';
 
 function loadCandidateUpdate($id){
-	return getCandidateById($id);	
+	return getCandidateById($id);
 }
 
 function checkContact($contact){
