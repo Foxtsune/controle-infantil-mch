@@ -40,7 +40,7 @@ validateSession();
                     </div>
                 </div>
             </form>
-            <table id="table_id" class="display table table-bordered table-hover">
+            <table id="table_id" class="display table table-bordered table-hover nowrap">
                 <thead>
                     <!-- 15306 default column size javascrip file  -->
                     <tr id="theader">
