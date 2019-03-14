@@ -47,7 +47,7 @@ validateSession();
                         <th scope="col" class="text-center">Editar</th>
                         <th scope="col" class="text-center">Idade</th>
                         <th scope="col" class="text-center">Nome</th>
-                        <th scope="col" class="text-center">Data do Casdastro</th>
+                        <th scope="col" class="text-center">Data do Cadastro</th>
                         <th scope="col" class="text-center">Data de Nascimento</th>
                         <th scope="col" class="text-center">Mãe</th>
                         <th scope="col" class="text-center">Situação</th>

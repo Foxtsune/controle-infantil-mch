@@ -62,4 +62,12 @@ function getCategory($firstDate,$secondDate){
 	return $candidates;
 }
 
+function export($year){
+	$conn = dbConnetion();
+	$statement = $conn->prepare("SELECT * FROM `candidates` WHERE birth BETWEEN '$year-01-01' AND '$year-12-31'");
+	$statement->execute();
+	$candidates = $statement->fetchAll(PDO::FETCH_NUM);
+	return $candidates;
+}
+
 //SELECT * FROM `candidates` WHERE birth BETWEEN '2018-01-01' AND '2018-12-31'

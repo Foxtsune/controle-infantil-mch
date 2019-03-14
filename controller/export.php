@@ -6,6 +6,11 @@ include abspath().'/model/candidates.php';
 
   // Original PHP code by Chirp Internet: www.chirp.com.au
   // Please acknowledge use of this code by including this header.
+  
+if(isset($_POST['year'])){
+
+  var_dump($_POST['year']);
+  exit();
 
  function cleanData(&$str)
   {
@@ -24,23 +29,43 @@ include abspath().'/model/candidates.php';
   header("Content-Disposition: attachment; filename=\"$filename\"");
   header("Content-Type: text/csv; charset=UTF-16LE");
 
-   $data = ["id","nome","nascimento","inscrição","mãe","pai","logradouro","numero","bairro","telefone1","telefone2","contato","destino","situação"];
+  $header = ["id","nome","nascimento","inscrição","mãe","pai","logradouro","número","bairro","telefone1","telefone2","contato","destino","situação"];
 
   $out = fopen("php://output", 'w');
 
   $flag = false;
-  $result = CSVData($_GET['date']);
+  $result = export($_POST['year']);
 
   while ($row = array_shift($result)) {
   	if(!$flag) {
       // display field/column names as first row
-      fputcsv($out, array_values($data), ',', '"');
+      array_walk($header, __NAMESPACE__ . '\cleanData');
+      fputcsv($out, array_values($header), ',', '"');
       $flag = true;
     }
     array_walk($row, __NAMESPACE__ . '\cleanData');
     fputcsv($out, array_values($row), ',', '"');
   }
+  $msg = array(
+    array("Como formatar os dados na planilha"),
+    array("1 - Selecione toda a primeira coluna"),
+    array("2 - Menu Dados"),
+    array("3 - Texto para colunas"),
+    array("4 - Delimitado - Avançar"),
+    array("5 - Vírgula - Avançar"),
+    array("6 - Avançar - Concluir"));
+
+  foreach ($msg as $row) {
+    array_walk($row, __NAMESPACE__ . '\cleanData');
+    fputcsv($out, $row);
+  }
 
   fclose($out);
   exit;
+} else {
+  $data = array('msg' => 'Insira o ano do nascimento', 'type' => $error);
+  $_SESSION['data'] = $data;
+  header('location: ../view/export.php');
+  exit;
+}
 ?>

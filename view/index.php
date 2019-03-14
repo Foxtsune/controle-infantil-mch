@@ -14,14 +14,14 @@ validateSession();
     <div id="page-content-wrapper" style="width: 100%">
         <section class="container-fluid">
             <p><h3><u>Bem vindo <?php echo $_SESSION['name'] ?></u></h3></p><br>
-            <table id="table_id" class="display table table-bordered table-hover">
+            <table id="table_id" class="display table table-bordered table-hover nowrap">
                 <thead>
                     <!-- 15306 default column size javascrip file  -->
                     <tr id="theader">
                         <th scope="col" class="text-center">Editar</th>
                         <th scope="col" class="text-center">Idade</th>
                         <th scope="col" class="text-center">Nome</th>
-                        <th scope="col" class="text-center">Data do Casdastro</th>
+                        <th scope="col" class="text-center">Data do Cadastro</th>
                         <th scope="col" class="text-center">Data de Nascimento</th>
                         <th scope="col" class="text-center">Mãe</th>
                         <th scope="col" class="text-center">Situação</th>
@@ -31,15 +31,21 @@ validateSession();
                 <tbody>
                     <?php foreach ($rows as $row => $column): ?>
                     <tr>
-                        <td scope="row" class="text-center"><a href="edit_candidate.php?id=<?php echo $column->id ?>"><img src="../assets/img/edit.png" width="30" height="30"></a></td>
+                        <td scope="row" class="text-center">
+                            <a href="edit_candidate.php?id=<?php echo $column->id ?>">
+                                <img src="../assets/img/edit.png" width="30" height="30">
+                            </a>
+                        </td>
                         <td scope="row" class="text-center"><?php echo dateDifference(date("Y")."-02-31", $column->birth,'%y') ?></td>
-                        <td scope="row" class="text-center"><?php echo $column->name ?></td>
+                        <td scope="row" class="text-center display nowrap"><?php echo $column->name ?></td>
                         <td scope="row" class="text-center"><?php echo stringToDate($column->inscription) ?></td>
                         <td scope="row" class="text-center"><?php echo stringToDate($column->birth) ?></td>
-                        <td scope="row" class="text-center"><?php echo $column->mother ?></td>
+                        <td scope="row" class="text-center display nowrap"><?php echo $column->mother ?></td>
                         <td scope="row" class="text-center"><?php echo $column->situation ?></td>
                         <td scope="row" class="text-center">
-                            <a href="#" data-href="delete_candidate.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete"><img src="../assets/img/delete.png" width="30" height="30"></a>
+                            <a href="#" data-href="delete_candidate.php?id=<?php echo $column->id ?>" data-toggle="modal" data-target="#confirm-delete">
+                                <img src="../assets/img/delete.png" width="30" height="30">
+                            </a>
                         </td>
                     </tr>
                     <?php endforeach ?>

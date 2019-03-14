@@ -33,3 +33,15 @@ TODO:
 {Exportar como CSV os nascidos no ano ?}
 
 {Levar em consideração as crianças que tem 0 anos nas categorias de infantil}
+
+{Adicionar um arquivo index(redirecionamento) para cada um dos diretórios para evitar o acesso indevido}
+
+
+-----------------------------------------------------------------------------------------------------
+ /////  AO SUBIR OS ARQUIVOS PARA A NUVEM, REMOVER A "CONTROLE INFANTIL DO DOCUMENT ROOT PATH"  /////
+
+ERRO
+Warning: require_once(/storage/ssd3/733/8851733/public_htmlControle-Infantil/assets/helpers.php): failed to open stream: No such file or directory in /storage/ssd3/733/8851733/public_html/view/index.php on line 5
+
+Fatal error: require_once(): Failed opening required '/storage/ssd3/733/8851733/public_htmlControle-Infantil/assets/helpers.php' (include_path='.:/usr/share/pear:/usr/share/php') in /storage/ssd3/733/8851733/public_html/view/index.php on line 5
+ ----------------------------------------------------------------------------------------------------

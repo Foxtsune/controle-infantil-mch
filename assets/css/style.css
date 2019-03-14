@@ -213,3 +213,10 @@ transform: translateY(0.625rem);
     background-color: #cecece;
     border-color: #fff;
 }
+/* EXPORT
+---------------------------------- */
+.export{
+  width: 35%;
+  background-color: rgba(132, 132, 132, .8);
+  margin: 0 auto;
+}

@@ -18,7 +18,7 @@ validateSession();
                 <div class="col-10"><p><h3><u>Usuários Ativos</u></h3></p></div>
                 <div class="col-2"><a href="new_user.php"><img src="../assets/img/add.png" title="Novo Usuário" width="110" height="110"></a></div>
             </div>
-            <table id="table_id" class="display table table-bordered table-hover">
+            <table id="table_id" class="display table table-bordered table-hover nowrap">
                 <thead>
                     <!-- 15306 default column size javascrip file  -->
                     <tr id="theader">

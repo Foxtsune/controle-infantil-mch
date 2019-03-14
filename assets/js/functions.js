@@ -24,7 +24,22 @@ function datatableApplyIndex() {
     		        "sSortAscending": ": Ordenar colunas de forma ascendente",
     		        "sSortDescending": ": Ordenar colunas de forma descendente"
     		    }
-    		}
+    		},/*SCROLLING*/
+                "scrollY": false,
+                "scrollX": "1000px",
+                "scrollCollapse": true,
+                "paging":         true,
+                "columnDefs": [
+                    { "width": "auto", targets: 0 },//img-edit 
+                    { "width": "auto", targets: 1 },//age
+                    { "width": "400px", targets: 2 },//name
+                    { "width": "auto", targets: 3 },//inscription
+                    { "width": "auto", targets: 4 },//birth
+                    { "width": "400px", targets: 5 },//mother
+                    { "width": "auto", targets: 6 },//situation
+                    { "width": "auto", targets: 7 }//img-delete
+                ],
+                "fixedColumns": true
         });
 };
 
@@ -54,14 +69,14 @@ function datatableApplyUsers() {
                     "sSortDescending": ": Ordenar colunas de forma descendente"
                 }
             },/*SCROLLING*/
-                "scrollY":        "400px",
-                "scrollX":        "1000px",
+                "scrollY": false,
+                "scrollX": "1000px",
                 "scrollCollapse": true,
                 "paging":         true,
                 "columnDefs": [
                     { "width": "auto", targets: 0 },//img-edit
-                    { "width": "500px", targets: 1 },//nome
-                    { "width": "500px", targets: 2 },//email
+                    { "width": "610px", targets: 1 },//nome
+                    { "width": "610px", targets: 2 },//email
                     { "width": "auto", targets: 3 }//img-apagar
                 ],
                 "fixedColumns": true
